@@ -1,0 +1,2232 @@
+<!doctype html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Jom Belajar Bahasa Melayu</title>
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIkpvbSBCZWxhamFyIEJNISIsCiAgInNob3J0X25hbWUiOiAiSm9tIEJNIiwKICAiZGVzY3JpcHRpb24iOiAiQmVsYWphciBBeWF0IFR1bmdnYWwgJiBBeWF0IE1ham11ayBkZW5nYW4gc2Vyb25vayIsCiAgInN0YXJ0X3VybCI6ICIuIiwKICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwKICAiYmFja2dyb3VuZF9jb2xvciI6ICIjZThmMGZlIiwKICAidGhlbWVfY29sb3IiOiAiIzdjNWNiZiIsCiAgImljb25zIjogWwogICAgewogICAgICAic3JjIjogImh0dHBzOi8vdTI5NDc1NjI0MS5wLmNsaWNrdXAtYXR0YWNobWVudHMuY29tL3UyOTQ3NTYyNDEvNjAxYTIyMTAtYjA3MC00ZWE4LTkxZjUtZDc3NWEyOGY5ZDQ2L2dlbmVyYXRlZC1pbWFnZS0yZTMxNGI3MS04YTg1LTQxNmEtOTBlMy0xZWQ4N2MxYWRjZGQucG5nP3ZpZXc9b3BlbiIsCiAgICAgICJzaXplcyI6ICIxOTJ4MTkyIiwKICAgICAgInR5cGUiOiAiaW1hZ2UvcG5nIgogICAgfQogIF0KfQ==">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.383.0/dist/umd/lucide.min.js"></script>
+    <style>
+        /* --- same as the fixed version, keep unchanged --- */
+        :root { --ink: #1a1a2e; --muted: #6b6b7a; --paper: #fcf9f5; --sky: #e8f0fe; --green: #7bc9a0; --yellow: #f9e45b; --pink: #f7c5cc; --blue: #7aa9d9; --purple: #a78bfa; --orange: #f9b84a; --red: #e8827a; --line: #dcd5c8; --shadow: 0 14px 36px rgba(0,0,0,0.10); --ease: cubic-bezier(.22,1,.36,1); --green-deep: #3a9d6e; --brown: #8a6a17; --white: #ffffff; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: var(--sky); color: var(--ink); font-family: 'Nunito', system-ui, sans-serif; line-height: 1.6; overflow-x: hidden; padding-bottom: 80px; min-height: 100vh; position: relative; }
+        button, input { font: inherit; color: inherit; }
+        button { cursor: pointer; border: none; background: none; }
+        img { display: block; max-width: 100%; }
+        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(120deg, #d4e6f1, #f9e6d4 50%, #d4f0e6); background-size: 300% 300%; animation: bgShift 18s ease infinite; z-index: -2; }
+        @keyframes bgShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        .cloud-layer { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; overflow: hidden; }
+        .cloud-anim { position: absolute; width: 200px; height: 80px; background: rgba(255,255,255,0.5); border-radius: 99px; filter: blur(2px); animation: driftCloud 35s linear infinite; }
+        .cloud-anim::before { content: ''; position: absolute; top: -40px; left: 30px; width: 100px; height: 100px; background: inherit; border-radius: 50%; }
+        .cloud-anim::after { content: ''; position: absolute; top: -20px; left: 80px; width: 70px; height: 70px; background: inherit; border-radius: 50%; }
+        .c1 { top: 10%; left: -250px; animation-duration: 45s; animation-delay: -10s; }
+        .c2 { top: 25%; left: -250px; animation-duration: 60s; animation-delay: -25s; transform: scale(.7); opacity: .6; }
+        .c3 { top: 70%; left: -250px; animation-duration: 55s; animation-delay: -35s; transform: scale(1.2); opacity: .4; }
+        @keyframes driftCloud { from { transform: translateX(0); } to { transform: translateX(calc(100vw + 300px)); } }
+        .floaty { position: fixed; pointer-events: none; z-index: -1; animation: floatAround 12s ease-in-out infinite; opacity: .25; font-size: 2rem; }
+        .floaty.f1 { top: 15%; left: 8%; animation-delay: 0s; }
+        .floaty.f2 { top: 40%; left: 80%; animation-delay: -3s; font-size: 1.5rem; }
+        .floaty.f3 { top: 75%; left: 15%; animation-delay: -6s; font-size: 1.8rem; }
+        .floaty.f4 { top: 60%; left: 50%; animation-delay: -9s; font-size: 2.2rem; }
+        .floaty.f5 { top: 20%; left: 60%; animation-delay: -12s; font-size: 1.4rem; }
+        .floaty.f6 { top: 85%; left: 70%; animation-delay: -15s; font-size: 1.7rem; }
+        .floaty.f7 { top: 50%; left: 20%; animation-delay: -4s; font-size: 1.3rem; }
+        .floaty.f8 { top: 10%; left: 45%; animation-delay: -8s; font-size: 1.9rem; }
+        @keyframes floatAround { 0%,100% { transform: translateY(0) rotate(0deg) scale(1); } 25% { transform: translateY(-25px) rotate(8deg) scale(1.05); } 75% { transform: translateY(-15px) rotate(-5deg) scale(0.95); } }
+        .twinkle { position: fixed; width: 6px; height: 6px; background: #f9e45b; border-radius: 50%; z-index: -1; animation: twinkle 2.5s ease-in-out infinite; }
+        .twinkle.t1 { top: 12%; left: 20%; animation-delay: 0s; }
+        .twinkle.t2 { top: 30%; left: 70%; animation-delay: .8s; }
+        .twinkle.t3 { top: 65%; left: 30%; animation-delay: 1.6s; }
+        .twinkle.t4 { top: 50%; left: 90%; animation-delay: 2s; }
+        .twinkle.t5 { top: 80%; left: 55%; animation-delay: 1s; }
+        .twinkle.t6 { top: 22%; left: 50%; animation-delay: .4s; width: 8px; height: 8px; }
+        .twinkle.t7 { top: 70%; left: 10%; animation-delay: 1.2s; width: 5px; height: 5px; }
+        @keyframes twinkle { 0%,100% { opacity: .1; transform: scale(.8); } 50% { opacity: 1; transform: scale(1.4); } }
+        .nav { position: sticky; top: 0; z-index: 30; height: 64px; display: flex; align-items: center; gap: 8px; padding: 0 16px; background: rgba(252,249,245,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); flex-wrap: nowrap; overflow-x: auto; }
+        .brand { display: flex; align-items: center; gap: 8px; font-weight: 900; font-size: 1.1rem; white-space: nowrap; flex-shrink: 0; }
+        .brand img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; animation: spinSlow 20s linear infinite; }
+        @keyframes spinSlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .links { display: flex; gap: 2px; flex: 1; flex-wrap: nowrap; overflow-x: auto; padding: 4px 0; -webkit-overflow-scrolling: touch; }
+        .links button { padding: 6px 10px; font-size: .72rem; font-weight: 800; border-radius: 99px; white-space: nowrap; transition: .2s; flex-shrink: 0; }
+        .links button:hover, .links button.active { background: var(--yellow); transform: translateY(-1px); }
+        .links svg { width: 14px; height: 14px; vertical-align: -2px; margin-right: 2px; }
+        .menu { display: none; width: 36px; height: 36px; border-radius: 50%; background: var(--pink); place-items: center; flex-shrink: 0; }
+        .menu.open { display: grid; }
+        .page { display: none; min-height: calc(100vh - 64px); padding: 20px 16px 40px; animation: fadeUp .4s var(--ease); }
+        .page.active { display: block; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+        .wrap { max-width: 1120px; margin: 0 auto; }
+        .head { text-align: center; margin-bottom: 24px; }
+        .head h1 { font-size: clamp(1.6rem, 4vw, 2.6rem); line-height: 1.1; background: linear-gradient(135deg, #7c5cbf, #4a8bc2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .head p { color: var(--muted); font-weight: 700; }
+        .panel { background: var(--paper); border-radius: 20px; padding: 20px; box-shadow: var(--shadow); transition: .2s; }
+        .hero { text-align: center; padding: 20px 0 10px; }
+        .hero-visual { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+        .hero-visual img { width: clamp(80px, 15vw, 140px); height: clamp(80px, 15vw, 140px); border-radius: 50%; object-fit: cover; border: 3px solid var(--paper); box-shadow: var(--shadow); animation: bob 3s ease-in-out infinite; }
+        .hero-visual img:nth-child(2) { animation-delay: -1.5s; border-radius: 20px; }
+        @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.6rem); font-weight: 900; text-shadow: 2px 2px 0 var(--yellow), 4px 4px 0 rgba(0,0,0,0.06); }
+        .hero p { font-size: 1.1rem; font-weight: 800; color: var(--muted); margin: 8px 0 18px; }
+        .hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+        .hero-actions button { padding: 12px 18px; border-radius: 16px; font-weight: 900; background: var(--green); box-shadow: 0 6px 18px rgba(0,0,0,0.08); transition: .2s; }
+        .hero-actions button:hover { transform: translateY(-3px) scale(1.03); }
+        .hero-actions button:nth-child(2) { background: var(--yellow); }
+        .hero-actions button:last-child { background: var(--purple); color: white; }
+        .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; max-width: 800px; margin: 24px auto 0; }
+        .stat { background: rgba(255,255,255,0.7); backdrop-filter: blur(4px); border: 1px solid var(--line); border-radius: 16px; padding: 10px 8px; text-align: center; transition: .2s; }
+        .stat b { display: block; font-size: 1.2rem; }
+        .stat small { color: var(--muted); font-weight: 700; font-size: .7rem; }
+        .qr-section { max-width: 800px; margin: 24px auto 0; background: var(--paper); border-radius: 20px; padding: 20px; border: 2px solid var(--line); transition: .2s; }
+        .qr-section:hover { border-color: var(--purple); }
+        .qr-inner { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .qr-img-wrap { background: white; border-radius: 14px; padding: 8px; border: 2px solid var(--line); flex-shrink: 0; }
+        .qr-img-wrap img { width: 130px; height: 130px; display: block; }
+        .qr-info h3 { font-size: 1.1rem; display: flex; align-items: center; gap: 6px; }
+        .qr-info p { color: var(--muted); font-size: .85rem; margin: 4px 0 8px; }
+        .qr-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+        .qr-btns button { padding: 6px 14px; border-radius: 99px; font-weight: 900; font-size: .75rem; transition: .2s; }
+        .qr-btns .btn-dl { background: var(--blue); color: white; }
+        .qr-btns .btn-copy { background: var(--yellow); }
+        .qr-btns button:hover { transform: scale(1.05); }
+        .qr-url { font-size: .65rem; color: var(--muted); background: #f5f0ea; padding: 4px 12px; border-radius: 99px; margin-top: 6px; word-break: break-all; border: 1px dashed var(--line); display: inline-block; max-width: 100%; }
+        .topic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+        .topic { background: var(--paper); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); cursor: pointer; transition: .25s; border: 2px solid transparent; }
+        .topic:hover { transform: translateY(-4px); border-color: var(--purple); }
+        .topic img { width: 100%; height: 130px; object-fit: cover; }
+        .topic-body { padding: 12px 14px; }
+        .topic-body h3 { font-size: 1rem; margin: 0; }
+        .topic-body small { color: var(--muted); font-weight: 700; }
+        .topic-body p { font-size: .8rem; color: var(--muted); margin: 2px 0 0; }
+        .note { display: none; max-width: 820px; margin: 0 auto; animation: fadeUp .35s var(--ease); }
+        .note.open { display: block; }
+        .back { background: var(--pink); padding: 8px 16px; border-radius: 99px; font-weight: 900; margin-bottom: 12px; transition: .2s; }
+        .back:hover { transform: scale(1.04); }
+        .note>img { width: 100%; max-height: 240px; object-fit: cover; border-radius: 16px; margin: 12px 0; }
+        .definition, .easy { background: var(--paper); padding: 16px; border-radius: 16px; border: 1px solid var(--line); margin-bottom: 12px; }
+        .easy { background: #eaf7ed; }
+        .cnbtn { border: 1px solid var(--purple); border-radius: 99px; padding: 4px 12px; font-weight: 900; transition: .2s; background: transparent; }
+        .cnbtn:hover { background: var(--purple); color: white; }
+        .cnhelp { display: none; margin-top: 8px; background: #f5ede4; padding: 10px; border-radius: 12px; }
+        .cnhelp.show { display: block; }
+        .examples { display: flex; flex-direction: column; gap: 8px; }
+        .example { display: flex; align-items: center; gap: 10px; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 10px 14px; flex-wrap: wrap; }
+        .example small { color: var(--muted); font-size: .75rem; }
+        .listen { margin-left: auto; background: #dce6f5; padding: 4px 12px; border-radius: 99px; font-weight: 900; font-size: .75rem; transition: .2s; flex-shrink: 0; }
+        .listen:hover { background: var(--blue); color: white; transform: scale(1.05); }
+        .compare { width: 100%; border-collapse: collapse; background: var(--paper); margin: 10px 0; border-radius: 12px; overflow: hidden; font-size: .85rem; }
+        .compare th, .compare td { padding: 10px; border: 1px solid var(--line); text-align: left; }
+        .compare th { background: var(--green); color: white; }
+        .compare th:last-child { background: var(--blue); }
+        .method { background: #f5ede4; border: 1px solid var(--orange); border-radius: 16px; padding: 14px; margin-top: 12px; }
+        .map-layout { display: grid; grid-template-columns: 1fr 320px; gap: 20px; align-items: start; }
+        .map-card { background: var(--paper); padding: 6px; border-radius: 20px; box-shadow: var(--shadow); }
+        .map-stage { position: relative; border-radius: 16px; overflow: hidden; }
+        .map-stage>img { width: 100%; display: block; }
+        .pin { position: absolute; transform: translate(-50%, -50%); background: var(--paper); border: 3px solid var(--ink); border-radius: 99px; padding: 4px 8px; font-size: .6rem; font-weight: 900; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: .2s; cursor: pointer; white-space: nowrap; min-width: 60px; text-align: center; touch-action: manipulation; }
+        .pin:hover, .pin.selected { transform: translate(-50%, -50%) scale(1.1); background: var(--yellow); z-index: 5; }
+        .pin small { display: block; font-size: .5rem; color: var(--muted); }
+        .p1 { left: 27%; top: 30%; border-color: var(--yellow); }
+        .p2 { left: 50%; top: 33%; border-color: var(--green); }
+        .p3 { left: 77%; top: 27%; border-color: var(--blue); }
+        .p4 { left: 25%; top: 65%; border-color: var(--orange); }
+        .p5 { left: 50%; top: 66%; border-color: var(--purple); }
+        .p6 { left: 74%; top: 65%; border-color: var(--pink); }
+        .map-panel { position: sticky; top: 80px; }
+        .map-panel h2 { font-size: 1.3rem; margin: 6px 0; }
+        .map-panel p { color: var(--muted); }
+        .lesson { background: var(--sky); border-radius: 14px; padding: 12px; margin: 12px 0; }
+        .lesson b { display: block; }
+        .wide { width: 100%; padding: 12px; border-radius: 14px; font-weight: 900; background: var(--ink); color: white; margin-top: 6px; transition: .2s; touch-action: manipulation; }
+        .wide:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
+        .wide.alt { background: var(--yellow); color: var(--ink); }
+        .map-info { display: none; margin-top: 20px; animation: fadeUp .35s var(--ease); }
+        .map-info.open { display: block; }
+        .map-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: center; }
+        .map-info img { border-radius: 16px; max-height: 200px; object-fit: cover; }
+        .tag { display: inline-block; background: var(--yellow); padding: 2px 10px; border-radius: 99px; font-size: .7rem; font-weight: 800; margin: 2px 2px 0 0; }
+        .story-scene-img { width: 100%; max-height: 420px; object-fit: contain; border-radius: 14px; margin-bottom: 12px; background: #f5f0ea; }
+        .story-scene-text { font-size: 1.1rem; line-height: 1.7; padding: 14px; background: #f5f0ea; border-radius: 14px; border-left: 5px solid var(--yellow); }
+        .story-grammar-tip { display: inline-block; background: var(--yellow); padding: 4px 14px; border-radius: 99px; font-weight: 800; font-size: .8rem; margin-top: 10px; }
+        .story-choice { padding: 10px 18px; border-radius: 14px; background: var(--paper); box-shadow: var(--shadow); font-weight: 800; transition: .2s; flex: 1; min-width: 100px; border: 2px solid transparent; touch-action: manipulation; }
+        .story-choice:hover:not(:disabled) { transform: translateY(-3px); border-color: var(--purple); }
+        .story-choice:disabled { opacity: 0.5; cursor: not-allowed; }
+        .story-choice.correct-answer { background: #e4f7de; border-color: var(--green-deep); }
+        .story-choice.wrong-answer { background: #fde7e2; border-color: var(--red); }
+        .story-final-message { padding: 16px; background: #e4f7de; border-radius: 16px; text-align: center; font-weight: 800; font-size: 1.1rem; color: var(--green-deep); }
+        .story-attempts { text-align: center; font-weight: 700; color: var(--muted); margin-top: 6px; font-size: .85rem; }
+        .story-hint-box { margin-top: 8px; padding: 10px 14px; background: #f5ede4; border-radius: 12px; font-weight: 700; color: var(--brown); display: none; border: 1px dashed var(--orange); }
+        .story-hint-box.show { display: block; }
+        #storyChoice1, #storyChoice2, #storyChoice3 { display: none; }
+        .match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+        .match-card { background: var(--paper); border: 3px solid var(--line); border-radius: 16px; padding: 16px 12px; text-align: center; transition: .2s; cursor: pointer; }
+        .match-card:hover:not(.answered) { transform: translateY(-4px); border-color: var(--blue); }
+        .match-card .sentence { font-weight: 800; font-size: 1rem; margin-bottom: 8px; }
+        .match-card .options { display: flex; gap: 8px; justify-content: center; }
+        .match-card .options button { padding: 4px 16px; border-radius: 99px; font-weight: 900; font-size: .8rem; background: var(--sky); border: 2px solid transparent; transition: .2s; touch-action: manipulation; }
+        .match-card .options button:hover:not(:disabled) { transform: scale(1.05); border-color: var(--purple); }
+        .match-card .options button:disabled { opacity: 0.5; cursor: default; }
+        .match-card .options button.selected { border-color: var(--blue); background: #dce6f5; }
+        .match-card.correct { border-color: var(--green-deep); background: #e4f7de; }
+        .match-card.wrong { border-color: var(--red); background: #fde7e2; }
+        .match-card.answered { cursor: default; }
+        .match-progress { font-weight: 700; color: var(--muted); margin-bottom: 10px; font-size: .9rem; }
+        .match-result { text-align: center; padding: 20px; }
+        .match-result .emoji { font-size: 3.5rem; }
+        .quiz-picker-item { background: var(--paper); border-radius: 16px; padding: 14px; box-shadow: var(--shadow); border: 2px solid var(--line); display: flex; align-items: center; gap: 12px; transition: .25s; cursor: pointer; margin-bottom: 10px; }
+        .quiz-picker-item:hover { transform: translateY(-3px); border-color: var(--blue); }
+        .quiz-picker-item .icon { font-size: 2rem; }
+        .quiz-picker-item .info { flex: 1; }
+        .quiz-picker-item .info h3 { font-size: 1rem; margin: 0; }
+        .quiz-picker-item .info p { color: var(--muted); font-size: .8rem; margin: 0; }
+        .quiz-picker-item .btn-start { padding: 8px 18px; border-radius: 99px; font-weight: 900; background: var(--blue); color: var(--ink); box-shadow: 0 4px 0 #5a8ab5; transition: .2s; touch-action: manipulation; }
+        .quiz-picker-item .btn-start:hover { transform: scale(1.05); }
+        .q-text { font-size: 1.15rem; font-weight: 800; margin: 10px 0 14px; }
+        .q-options { display: flex; flex-direction: column; gap: 10px; }
+        .q-opt-btn { background: white; border: 3px solid #e7dfcb; border-radius: 14px; padding: 12px 16px; font-weight: 800; text-align: left; display: flex; align-items: center; gap: 10px; width: 100%; transition: .2s; touch-action: manipulation; }
+        .q-opt-btn:hover:not(:disabled) { border-color: var(--blue); transform: translateX(4px); }
+        .q-opt-btn .letter { background: #efe9dc; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .85rem; flex-shrink: 0; }
+        .q-opt-btn.correct { background: #e4f7de; border-color: var(--green-deep); }
+        .q-opt-btn.correct .letter { background: var(--green-deep); color: white; }
+        .q-opt-btn.wrong { background: #fde7e2; border-color: var(--red); }
+        .q-opt-btn.wrong .letter { background: var(--red); color: white; }
+        .q-opt-btn:disabled { opacity: 0.6; cursor: default; }
+        .q-feedback { margin-top: 12px; padding: 12px; border-radius: 14px; font-weight: 800; text-align: center; display: none; }
+        .q-feedback.show { display: block; }
+        .q-feedback.good { background: #e4f7de; color: var(--green-deep); border: 2px solid var(--green); }
+        .q-feedback.retry { background: #fff3d6; color: var(--brown); border: 2px solid var(--yellow); }
+        .q-next-btn { display: none; padding: 10px 22px; border-radius: 99px; background: var(--green); color: white; font-weight: 900; margin-top: 14px; box-shadow: 0 4px 0 var(--green-deep); transition: .2s; touch-action: manipulation; }
+        .q-next-btn:hover { transform: scale(1.04); }
+        .q-next-btn.show { display: inline-flex; align-items: center; gap: 8px; }
+        .chat { position: fixed; right: 16px; bottom: 90px; width: min(380px, calc(100vw - 32px)); height: 500px; background: var(--paper); border: 1px solid var(--line); border-radius: 20px; box-shadow: 0 18px 48px rgba(0,0,0,0.18); z-index: 40; display: none; flex-direction: column; overflow: hidden; }
+        .chat.open { display: flex; animation: fadeUp .3s var(--ease); }
+        .chat-head { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: #f5ede4; flex-shrink: 0; flex-wrap: wrap; }
+        .chat-head .avatar { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+        .chat-head .info { flex: 1; }
+        .chat-head .info h3 { font-size: .9rem; margin: 0; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+        .chat-head .info h3 .key-status { font-size: .5rem; font-weight: 700; background: var(--green); color: white; padding: 1px 8px; border-radius: 99px; }
+        .chat-head .info h3 .key-status.missing { background: var(--orange); }
+        .chat-head .info p { margin: 0; font-size: .65rem; color: var(--muted); }
+        .chat-head .key-btn { padding: 2px 10px; border-radius: 99px; font-size: .6rem; font-weight: 900; background: var(--purple); color: white; flex-shrink: 0; touch-action: manipulation; }
+        .messages { flex: 1; padding: 10px 14px; overflow-y: auto; display: flex; flex-direction: column; gap: 6px; background: #f8f5f0; }
+        .msg { max-width: 88%; padding: 8px 12px; border-radius: 14px; font-size: .85rem; line-height: 1.4; word-break: break-word; }
+        .msg.bot { background: var(--paper); border: 1px solid var(--line); align-self: flex-start; border-bottom-left-radius: 4px; }
+        .msg.user { background: #dce6f5; align-self: flex-end; border-bottom-right-radius: 4px; }
+        .quick { display: flex; flex-wrap: wrap; gap: 4px; padding: 6px 10px; border-top: 1px solid var(--line); flex-shrink: 0; background: var(--paper); }
+        .quick button { padding: 3px 10px; border: 1px solid var(--line); border-radius: 99px; font-size: .6rem; font-weight: 800; transition: .2s; touch-action: manipulation; }
+        .quick button:hover { background: var(--yellow); border-color: var(--yellow); }
+        .chat-input { display: flex; gap: 6px; padding: 6px 10px; border-top: 1px solid var(--line); flex-shrink: 0; background: var(--paper); }
+        .chat-input input { flex: 1; border: 1px solid var(--line); border-radius: 99px; padding: 6px 14px; font-size: .8rem; outline: none; background: #f8f5f0; }
+        .chat-input input:focus { border-color: var(--blue); background: white; }
+        .send { width: 34px; border-radius: 50%; background: var(--blue); color: white; display: grid; place-items: center; flex-shrink: 0; transition: .2s; touch-action: manipulation; }
+        .send:hover { transform: scale(1.06); }
+        .mic-btn { width: 34px; border-radius: 50%; background: var(--red); color: white; display: grid; place-items: center; flex-shrink: 0; transition: .2s; touch-action: manipulation; }
+        .mic-btn:hover { transform: scale(1.06); }
+        .mic-btn.recording { background: var(--orange); animation: pulse 1s infinite; }
+        @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.12); } }
+        .fab { position: fixed; right: 16px; bottom: 16px; width: 64px; height: 64px; border-radius: 50%; border: 3px solid var(--paper); padding: 0; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.18); z-index: 41; transition: .2s; animation: float 4s ease-in-out infinite; touch-action: manipulation; }
+        .fab:hover { transform: scale(1.06); }
+        .fab img { width: 100%; height: 100%; object-fit: cover; }
+        .toast { position: fixed; left: 50%; bottom: 20px; transform: translate(-50%, 20px); opacity: 0; background: var(--ink); color: white; padding: 8px 18px; border-radius: 99px; font-weight: 900; font-size: .8rem; transition: .3s; z-index: 70; pointer-events: none; max-width: 90vw; text-align: center; box-shadow: 0 8px 28px rgba(0,0,0,0.2); }
+        .toast.show { opacity: 1; transform: translate(-50%, 0); }
+        .key-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); backdrop-filter: blur(6px); z-index: 100; align-items: center; justify-content: center; }
+        .key-modal.open { display: flex; }
+        .key-modal .modal-box { background: var(--paper); border-radius: 20px; padding: 24px; max-width: 440px; width: 92%; box-shadow: var(--shadow); position: relative; }
+        .key-modal .modal-box h2 { font-size: 1.2rem; margin: 0 0 4px; }
+        .key-modal .modal-box p { color: var(--muted); font-size: .85rem; margin: 0 0 12px; }
+        .key-modal .modal-box input { width: 100%; padding: 10px 14px; border: 2px solid var(--line); border-radius: 12px; font-size: .9rem; outline: none; }
+        .key-modal .modal-box input:focus { border-color: var(--purple); }
+        .key-modal .modal-box .actions { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
+        .key-modal .modal-box .actions button { padding: 8px 18px; border-radius: 99px; font-weight: 900; font-size: .8rem; flex: 1; min-width: 70px; transition: .2s; touch-action: manipulation; }
+        .key-modal .modal-box .actions .save-btn { background: var(--green); color: white; }
+        .key-modal .modal-box .actions .clear-btn { background: var(--red); color: white; }
+        .key-modal .modal-box .close-modal { position: absolute; top: 10px; right: 14px; font-size: 1.4rem; color: var(--muted); transition: .2s; touch-action: manipulation; }
+        .key-modal .modal-box .close-modal:hover { transform: rotate(90deg); }
+        .key-modal .modal-box .hint { font-size: .7rem; color: var(--muted); margin-top: 10px; background: #f5ede4; padding: 10px 14px; border-radius: 12px; line-height: 1.5; }
+        .key-modal .modal-box .hint a { color: var(--blue); font-weight: 800; text-decoration: none; }
+        .bottom-right-controls { position: fixed; bottom: 20px; right: 20px; z-index: 50; display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+        .music-player { background: var(--paper); border-radius: 99px; padding: 6px 14px 6px 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); border: 1px solid var(--line); display: flex; align-items: center; gap: 6px; font-size: .65rem; font-weight: 800; color: var(--muted); animation: pulseGlow 3s ease-in-out infinite; }
+        @keyframes pulseGlow { 0%,100% { box-shadow: 0 4px 16px rgba(0,0,0,0.08); } 50% { box-shadow: 0 4px 24px rgba(167,139,250,0.25); } }
+        .music-player button { width: 28px; height: 28px; border-radius: 50%; background: var(--green); color: white; display: grid; place-items: center; font-size: .8rem; transition: .2s; touch-action: manipulation; }
+        .music-player button:hover { transform: scale(1.08); }
+        .music-player .status { font-size: .6rem; }
+        .offline-badge { background: var(--paper); border-radius: 99px; padding: 4px 12px 4px 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid var(--line); display: flex; align-items: center; gap: 6px; font-size: .6rem; font-weight: 800; color: var(--muted); transition: .3s; cursor: default; }
+        .offline-badge .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; background: #10b981; }
+        .offline-badge.offline .dot { background: #ef4444; animation: pulse-dot-red 1s ease-in-out infinite; }
+        .offline-badge .btn-cache { background: rgba(0,0,0,0.05); padding: 1px 8px; border-radius: 99px; font-weight: 700; font-size: .55rem; color: var(--ink); transition: .2s; cursor: pointer; border: none; touch-action: manipulation; }
+        .offline-badge .btn-cache:hover { background: rgba(0,0,0,0.1); transform: scale(1.05); }
+        .offline-badge .cache-count { opacity: 0.6; font-weight: 600; }
+        @keyframes pulse-dot-red { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.6); } }
+        @media(max-width:650px) { .bottom-right-controls { bottom: 12px; right: 12px; gap: 6px; } .music-player { padding: 4px 10px 4px 8px; font-size: .55rem; } .music-player button { width: 24px; height: 24px; font-size: .7rem; } .offline-badge { font-size: .5rem; padding: 3px 8px 3px 6px; } .offline-badge .btn-cache { font-size: .5rem; padding: 0 6px; } .fab { width: 56px; height: 56px; right: 12px; bottom: 12px; } .match-grid { grid-template-columns: 1fr; } .map-layout { grid-template-columns: 1fr; } .map-panel { position: static; margin-top: 16px; } }
+        #confettiCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; }
+        .misiloc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 16px 0; }
+        .misiloc-card { background: var(--paper); border-radius: 16px; padding: 14px 8px; text-align: center; box-shadow: var(--shadow); border: 3px solid var(--line); transition: .25s; cursor: pointer; touch-action: manipulation; }
+        .misiloc-card:hover:not(.locked) { transform: translateY(-4px); border-color: var(--blue); }
+        .misiloc-card.locked { opacity: .5; filter: grayscale(.6); cursor: not-allowed; }
+        .misiloc-card.done { border-color: var(--green); background: #eaf7ed; }
+        .misiloc-card.current { border-color: var(--yellow); box-shadow: 0 0 0 4px rgba(249,228,91,0.35); }
+        .misiloc-card .emoji { font-size: 2.2rem; display: block; }
+        .misiloc-card .lname { font-weight: 900; font-size: .8rem; margin: 4px 0 2px; }
+        .misiloc-card .lstatus { font-size: .65rem; font-weight: 700; color: var(--muted); }
+        .misiloc-card .lstatus.done { color: var(--green-deep); }
+        .misiloc-card .lstatus.current { color: var(--orange); }
+        .misi-progress { background: var(--paper); border-radius: 14px; padding: 12px 16px; margin-bottom: 16px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; box-shadow: var(--shadow); border: 2px solid var(--line); }
+        .misi-progress .misistats { display: flex; gap: 14px; flex-wrap: wrap; font-weight: 800; font-size: .8rem; }
+        .misi-progress .misistats span { background: var(--sky); padding: 3px 12px; border-radius: 99px; }
+        .misi-finish-box { text-align: center; padding: 24px; background: var(--paper); border-radius: 20px; box-shadow: var(--shadow); border: 3px solid var(--green); }
+        .misi-finish-box .big-emoji { font-size: 3.5rem; }
+        .hint-btn { padding: 4px 12px; border-radius: 99px; background: var(--yellow); font-weight: 900; font-size: .75rem; transition: .2s; touch-action: manipulation; }
+        .hint-btn:hover { transform: scale(1.05); }
+        .hint-box { margin-top: 6px; padding: 8px 12px; background: #f5ede4; border-radius: 12px; font-size: .85rem; font-weight: 700; color: var(--brown); display: none; }
+        .hint-box.show { display: block; }
+        .lyrics-container { background: var(--paper); border-radius: 14px; padding: 18px 16px; border: 2px solid var(--line); }
+        .lyrics-container .stanza { margin-bottom: 14px; padding: 10px 14px; border-radius: 12px; background: #f8f5f0; border-left: 5px solid var(--purple); }
+        .lyrics-container .stanza .label { display: inline-block; font-size: .6rem; font-weight: 900; text-transform: uppercase; background: var(--purple); color: white; padding: 1px 10px; border-radius: 99px; margin-bottom: 4px; }
+        .lyrics-container .stanza .label.gold { background: var(--yellow); color: var(--ink); }
+        .lyrics-container .stanza .label.green { background: var(--green); }
+        .lyrics-container .stanza p { margin: 2px 0; font-weight: 800; font-size: .95rem; line-height: 1.6; }
+        .lyrics-container .stanza .highlight-tunggal { background: var(--yellow); padding: 0 4px; border-radius: 4px; }
+        .lyrics-container .stanza .highlight-majmuk { background: var(--green); padding: 0 4px; border-radius: 4px; color: white; }
+        .lyrics-container .stanza .highlight-hubung { background: var(--purple); padding: 0 4px; border-radius: 4px; color: white; }
+        .lyrics-container .stanza .highlight-seronok { background: var(--pink); padding: 0 4px; border-radius: 4px; }
+        .lyrics-container .chorus { background: rgba(123,201,160,0.15); border-left-color: var(--green); }
+        .lyrics-container .chorus .label { background: var(--green); }
+        .lyrics-container .outro { background: rgba(122,169,217,0.12); border-left-color: var(--blue); }
+        .lyrics-container .outro .label { background: var(--blue); }
+        .lyrics-container .stanza .emoji-line { font-size: 1rem; margin-right: 4px; }
+        @media(max-width:650px) { .lyrics-container .stanza p { font-size: .85rem; } .lyrics-container { padding: 12px 10px; } .lyrics-container .stanza { padding: 8px 10px; } }
+        .quiz-map-wrapper { position: relative; display: inline-block; width: 100%; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); }
+        .quiz-map-wrapper img { width: 100%; display: block; }
+        .quiz-hotspot { position: absolute; cursor: pointer; touch-action: manipulation; border-radius: 8px; transition: background 0.2s; }
+        .quiz-hotspot:active { background: rgba(167,139,250,0.2); }
+        .hotspot-tunggal { left: 18%; top: 8%; width: 14%; height: 18%; }
+        .hotspot-majmuk { left: 48%; top: 8%; width: 14%; height: 18%; }
+        .hotspot-cabaran { left: 72%; top: 8%; width: 14%; height: 18%; }
+        .typing { display: flex; gap: 4px; padding: 4px 0; }
+        .typing span { width: 8px; height: 8px; background: #999; border-radius: 50%; animation: typingAnim 1.4s infinite; }
+        .typing span:nth-child(2) { animation-delay: 0.2s; }
+        .typing span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes typingAnim { 0%,60%,100% { transform: translateY(0); } 30% { transform: translateY(-6px); } }
+    </style>
+</head>
+<body>
+
+    <!-- ===== BACKGROUND ANIMATIONS ===== -->
+    <div class="cloud-layer">
+        <div class="cloud-anim c1"></div>
+        <div class="cloud-anim c2"></div>
+        <div class="cloud-anim c3"></div>
+    </div>
+    <div class="floaty f1">🚗</div>
+    <div class="floaty f2">🧸</div>
+    <div class="floaty f3">☁️</div>
+    <div class="floaty f4">⭐</div>
+    <div class="floaty f5">🎈</div>
+    <div class="floaty f6">🚗</div>
+    <div class="floaty f7">🌈</div>
+    <div class="floaty f8">🎵</div>
+    <div class="twinkle t1"></div>
+    <div class="twinkle t2"></div>
+    <div class="twinkle t3"></div>
+    <div class="twinkle t4"></div>
+    <div class="twinkle t5"></div>
+    <div class="twinkle t6"></div>
+    <div class="twinkle t7"></div>
+
+    <!-- NAV -->
+    <nav class="nav" role="navigation" id="mainNav">
+        <div class="brand" onclick="go('home')"><img src="https://u294756241.p.clickup-attachments.com/u294756241/601a2210-b070-4ea8-91f5-d775a28f9d46/generated-image-2e314b71-8a85-416a-90e3-1ed87c1adcdd.png?view=open" alt="Bear"><span>Jom BM!</span></div>
+        <div class="links" id="links">
+            <button data-p="home" class="active" onclick="go('home')"><i data-lucide="home"></i> Utama</button>
+            <button data-p="video" onclick="go('video')"><i data-lucide="video"></i> Video</button>
+            <button data-p="map" onclick="go('map')"><i data-lucide="map"></i> Peta</button>
+            <button data-p="topics" onclick="go('topics')"><i data-lucide="book-open"></i> Nota</button>
+            <button data-p="quiz" onclick="go('quiz')"><i data-lucide="gamepad-2"></i> Kuiz</button>
+            <button data-p="song" onclick="go('song')"><i data-lucide="music"></i> Lagu</button>
+            <button data-p="match" onclick="go('match')"><i data-lucide="move-horizontal"></i> Padanan</button>
+            <button data-p="story" onclick="go('story')"><i data-lucide="book"></i> Cerita</button>
+            <button data-p="misi" onclick="go('misi')"><i data-lucide="flag"></i> Misi</button>
+            <button data-p="ai" onclick="toggleChat()"><i data-lucide="bot"></i> Cik AI</button>
+        </div>
+        <button class="menu" onclick="document.getElementById('links').classList.toggle('open')" aria-label="Menu"><i data-lucide="menu"></i></button>
+    </nav>
+
+    <!-- ===== HOME ===== -->
+    <section class="page active" id="home">
+        <div class="wrap hero">
+            <div class="hero-visual">
+                <img src="https://u294756241.p.clickup-attachments.com/u294756241/81833ab0-fbb9-4617-8197-e5fd53044d6c/generated-image-c3621e54-a982-4950-8287-afe4adb380b5.png?view=open" alt="Guru">
+                <img src="https://u294756241.p.clickup-attachments.com/u294756241/afec2801-1136-41f0-8a31-c4187914180a/generated-image-e475132f-b9e1-4add-b239-c63dc0708aed.png?view=open" alt="Kelas">
+                <img src="https://u294756241.p.clickup-attachments.com/u294756241/601a2210-b070-4ea8-91f5-d775a28f9d46/generated-image-2e314b71-8a85-416a-90e3-1ed87c1adcdd.png?view=open" alt="Bear">
+            </div>
+            <h1>Jom Belajar Bahasa Melayu!</h1>
+            <p>Belajar · Faham · Main · Tanya AI</p>
+            <div class="hero-actions">
+                <button onclick="go('map')"><i data-lucide="map"></i> Peta</button>
+                <button onclick="go('quiz')"><i data-lucide="gamepad-2"></i> Kuiz</button>
+                <button onclick="go('match')"><i data-lucide="move-horizontal"></i> Padanan</button>
+                <button onclick="go('story')"><i data-lucide="book"></i> Cerita</button>
+                <button onclick="go('misi')" style="background:var(--purple);color:white;"><i data-lucide="flag"></i> Misi</button>
+            </div>
+            <div class="stats">
+                <div class="stat"><b id="xp">120 XP</b><small>Mata</small></div>
+                <div class="stat"><b id="stars">0</b><small>Bintang</small></div>
+                <div class="stat"><b id="done">0/3</b><small>Misi</small></div>
+                <div class="stat"><b id="streak">0 hari</b><small>Streak</small></div>
+            </div>
+            <div class="qr-section" id="qrSection">
+                <div class="qr-inner">
+                    <div class="qr-img-wrap"><img id="qrCodeImg" src="" alt="QR Code"></div>
+                    <div class="qr-info">
+                        <h3>📱 Imbas QR</h3>
+                        <p>Scan untuk buka laman ini di telefon!</p>
+                        <div class="qr-btns">
+                            <button class="btn-dl" onclick="downloadQR()"><i data-lucide="download"></i> Muat Turun</button>
+                            <button class="btn-copy" onclick="copyURL()"><i data-lucide="copy"></i> Salin URL</button>
+                        </div>
+                        <div class="qr-url" id="qrUrlDisplay">⏳ Memuatkan...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== VIDEO ===== -->
+    <section class="page" id="video">
+        <div class="wrap">
+            <div class="head"><h1>Video Pembelajaran</h1><p>Tonton video untuk faham lebih mudah.</p></div>
+            <div class="panel" style="max-width:900px;margin:auto;">
+                <h2>📺 Ayat Tunggal & Ayat Majmuk</h2>
+                <div style="position:relative;padding-top:56.25%;border-radius:16px;overflow:hidden;box-shadow:var(--shadow);">
+                    <iframe src="https://drive.google.com/file/d/11MyWSmBK7r5bRvYEgDPyK755Ejx8A4x7/preview" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allowfullscreen></iframe>
+                </div>
+                <div style="text-align:center;margin-top:16px;">
+                    <a href="https://drive.google.com/file/d/11MyWSmBK7r5bRvYEgDPyK755Ejx8A4x7/view?usp=sharing" target="_blank" style="display:inline-block;background:var(--green);padding:12px 24px;border-radius:99px;font-weight:900;text-decoration:none;color:var(--ink);">📂 Buka di Google Drive</a>
+                </div>
+                <div style="margin-top:12px;">
+                    <p><b>Nota:</b></p>
+                    <ul style="line-height:1.8;padding-left:20px;">
+                        <li>✅ <b>Ayat Tunggal</b> = 1 idea sahaja.</li>
+                        <li>✅ <b>Ayat Majmuk</b> = 2 atau lebih idea digabungkan.</li>
+                        <li>✅ Contoh: Ali membaca buku. (Tunggal)</li>
+                        <li>✅ Contoh: Ali membaca buku <b>dan</b> Siti menulis nota. (Majmuk)</li>
+                    </ul>
+                    <button class="wide" onclick="go('quiz')">Cuba Kuiz ➜</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MAP ===== -->
+    <section class="page" id="map">
+        <div class="wrap">
+            <div class="head"><h1>🗺️ Peta Mr Bean</h1><p>Klik lokasi untuk buka bahan pembelajaran.</p></div>
+            <div class="map-layout">
+                <div>
+                    <div class="map-card">
+                        <div class="map-stage">
+                            <img src="https://i.postimg.cc/CKBHfZBq/Chat-GPT-Image-Sep-1-2026-10-23-45-PM.png" alt="Peta">
+                            <button class="pin p1" onclick="pick('home',this)">🏠 Rumah<small>Nota</small></button>
+                            <button class="pin p2" onclick="pick('garden',this)">🌳 Taman<small>Tunggal</small></button>
+                            <button class="pin p3" onclick="pick('museum',this)">🏫 Sekolah<small>Nota</small></button>
+                            <button class="pin p4" onclick="pick('cafe',this)">☕ Kafe<small>Latihan</small></button>
+                            <button class="pin p5" onclick="pick('castle',this)">📚 Perpustakaan<small>Majmuk</small></button>
+                            <button class="pin p6" onclick="pick('robot',this)">🤖 Bengkel<small>AI</small></button>
+                        </div>
+                    </div>
+                </div>
+                <aside class="panel map-panel">
+                    <div class="eyebrow" style="font-weight:800;color:var(--muted);font-size:.7rem;">📍 Lokasi</div>
+                    <h2 id="mapTitle">Rumah Mr Bean</h2>
+                    <p id="mapText">Nota dan contoh mudah.</p>
+                    <div class="lesson"><b id="mapBox">Misi</b><span id="mapHint">Tekan Teruskan untuk maklumat.</span></div>
+                    <button class="wide" onclick="continueMap()">➡️ Teruskan</button>
+                    <button class="wide alt" onclick="showToast('✅ Lokasi ditanda selesai!')">✅ Tanda Selesai</button>
+                </aside>
+            </div>
+            <div class="panel map-info" id="mapInfo">
+                <div class="map-info-grid">
+                    <img id="infoImg" src="https://u294756241.p.clickup-attachments.com/u294756241/1fc8ae87-7e89-4ac9-a64f-ed054d12403d/generated-image-57f3a305-1b59-4dcb-9e46-f86cbb8b1b95.png?view=open" alt="Info">
+                    <div>
+                        <h2 id="infoTitle">Topik</h2>
+                        <p id="infoText">Maklumat lanjut.</p>
+                        <div id="tags"></div>
+                        <button class="wide" onclick="openMaterial()">📖 Buka Bahan</button>
+                        <button class="wide alt" onclick="closeMapInfo()">🔙 Kembali</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NOTA ===== -->
+    <section class="page" id="topics">
+        <div class="wrap">
+            <div class="head"><h1>📝 Nota Ceria</h1><p>Jom kenal, lihat contoh, fahami dengan senang.</p></div>
+            <div id="topicGrid" class="topic-grid">
+                <article class="topic" onclick="openTopic('at')"><img src="https://img.freepik.com/free-vector/cute-girl-reading-book-cartoon_138676-2975.jpg?w=400&h=300&fit=crop" alt="Tunggal"><div class="topic-body"><h3>Ayat Tunggal</h3><small>单句</small><p>Satu cerita utama.</p></div></article>
+                <article class="topic" onclick="openTopic('am')"><img src="https://img.freepik.com/free-vector/cute-kids-playing-together-cartoon_138676-2977.jpg?w=400&h=300&fit=crop" alt="Majmuk"><div class="topic-body"><h3>Ayat Majmuk</h3><small>复句</small><p>Dua idea digabungkan.</p></div></article>
+                <article class="topic" onclick="openTopic('beza')"><img src="https://img.freepik.com/free-vector/cute-kids-comparing-things-cartoon_138676-2980.jpg?w=400&h=300&fit=crop" alt="Beza"><div class="topic-body"><h3>Perbezaan</h3><small>区别</small><p>1 idea vs 2+ idea.</p></div></article>
+            </div>
+            <div class="note" id="note-beza">
+                <button class="back" onclick="closeTopic()">🔙 Kembali</button>
+                <h2>Perbezaan Ayat Tunggal & Ayat Majmuk</h2>
+                <p>单句与复句的区别</p>
+                <img src="https://img.freepik.com/free-vector/cute-kids-comparing-things-cartoon_138676-2980.jpg?w=800&h=400&fit=crop" alt="Beza">
+                <div class="definition"><b>📖 Jom Kenal!</b><p><strong>Ayat tunggal (单句)</strong> = 1 idea sahaja. Ada satu subjek dan satu predikat.</p><p><strong>Ayat majmuk (复句)</strong> = 2 atau lebih idea yang digabungkan.</p></div>
+                <div class="easy"><b>🧠 Bahasa mudah:</b> Satu idea = Ayat Tunggal. Dua idea = Ayat Majmuk. <button class="cnbtn" onclick="cn('cnbeza')">Bantuan Cina 中文</button><div class="cnhelp" id="cnbeza">单句只有一个主语和一个谓语，表示一个完整的意思。复句由两个或更多的单句组成。</div></div>
+                <h3>📊 Perbezaan</h3>
+                <table class="compare"><tr><th>Ayat Tunggal 单句</th><th>Ayat Majmuk 复句</th></tr><tr><td>1 idea / cerita</td><td>2 atau lebih idea</td></tr><tr><td>Biasanya satu ayat mudah</td><td>Gabungan dua ayat atau lebih</td></tr><tr><td>Tidak semestinya ada kata hubung</td><td>Biasanya guna kata hubung</td></tr><tr><td>Ali membaca buku.</td><td>Ali membaca buku dan Siti menulis nota.</td></tr></table>
+                <h3>🔗 Kata Hubung Biasa</h3>
+                <div class="method"><b>Kata hubung:</b> dan, atau, tetapi, kerana, lalu, sambil<br><br><b>Contoh:</b><br>• Ali makan dan minum.<br>• Saya tidak datang kerana sakit.<br>• Aina bangun lalu membuka pintu.<br>• Mei Ling menyanyi sambil memasak.</div>
+                <h3>✂️ Teknik "Potong Ayat"</h3>
+                <div class="method"><b>Contoh 1:</b> Ibu memasak dan ayah membaca surat khabar.<br>Potong → Ibu memasak. + Ayah membaca surat khabar.<br>✅ Boleh jadi 2 ayat lengkap → <b>Ayat Majmuk</b><br><br><b>Contoh 2:</b> Adik makan nasi.<br>Potong → Adik. + Makan nasi.<br>❌ Tidak jadi 2 ayat lengkap → <b>Ayat Tunggal</b></div>
+                <h3>📝 Contoh</h3>
+                <div class="examples">
+                    <div class="example"><b>Ali dan Abu bermain.</b><small>Ayat Tunggal (1 idea)</small><button class="listen" onclick="speakText('Ali dan Abu bermain.')">🔊 Dengar</button></div>
+                    <div class="example"><b>Ali bermain bola dan Abu membaca buku.</b><small>Ayat Majmuk (2 idea)</small><button class="listen" onclick="speakText('Ali bermain bola dan Abu membaca buku.')">🔊 Dengar</button></div>
+                    <div class="example"><b>Ibu memasak dan ayah membaca surat khabar.</b><small>Ayat Majmuk (2 idea)</small><button class="listen" onclick="speakText('Ibu memasak dan ayah membaca surat khabar.')">🔊 Dengar</button></div>
+                </div>
+            </div>
+            <div class="note" id="note-at">
+                <button class="back" onclick="closeTopic()">🔙 Kembali</button>
+                <h2>Ayat Tunggal</h2>
+                <p>单句</p>
+                <img src="https://img.freepik.com/free-vector/cute-girl-reading-book-cartoon_138676-2975.jpg?w=800&h=400&fit=crop" alt="Tunggal">
+                <div class="definition"><b>📖 Jom Kenal!</b><p>Ayat tunggal (单句) ialah ayat yang mempunyai satu subjek dan satu predikat.</p></div>
+                <div class="easy"><b>🧠 Bahasa mudah:</b> Satu idea atau satu cerita. (一个意思或一个故事。)</div>
+                <h3>📝 Contoh</h3>
+                <div class="examples">
+                    <div class="example"><b>Siti membaca buku.</b><small>单句</small><button class="listen" onclick="speakText('Siti membaca buku.')">🔊 Dengar</button></div>
+                    <div class="example"><b>Kucing itu tidur.</b><small>单句</small><button class="listen" onclick="speakText('Kucing itu tidur.')">🔊 Dengar</button></div>
+                </div>
+            </div>
+            <div class="note" id="note-am">
+                <button class="back" onclick="closeTopic()">🔙 Kembali</button>
+                <h2>Ayat Majmuk</h2>
+                <p>复句</p>
+                <img src="https://img.freepik.com/free-vector/cute-kids-playing-together-cartoon_138676-2977.jpg?w=800&h=400&fit=crop" alt="Majmuk">
+                <div class="definition"><b>📖 Jom Kenal!</b><p>Ayat majmuk (复句) ialah ayat yang terdiri daripada dua ayat atau lebih yang digabungkan.</p></div>
+                <div class="easy"><b>🧠 Bahasa mudah:</b> Dua atau lebih idea yang digabungkan dengan kata hubung (连词).</div>
+                <h3>📝 Contoh</h3>
+                <div class="examples">
+                    <div class="example"><b>Ali membaca buku dan Siti menulis nota.</b><small>复句</small><button class="listen" onclick="speakText('Ali membaca buku dan Siti menulis nota.')">🔊 Dengar</button></div>
+                    <div class="example"><b>Ibu memasak dan ayah membaca surat khabar.</b><small>复句</small><button class="listen" onclick="speakText('Ibu memasak dan ayah membaca surat khabar.')">🔊 Dengar</button></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== KUIZ ===== -->
+    <section class="page" id="quiz">
+        <div class="wrap">
+            <div class="head"><h1>📝 Kuiz</h1><p>Klik lokasi di peta untuk mulakan kuiz.</p></div>
+            <div class="quiz-map-wrapper">
+                <img src="https://i.postimg.cc/MT0sBgcm/MR-BEAN-PETA.png" alt="Peta Kuiz">
+                <div class="quiz-hotspot hotspot-tunggal" onclick="startLevelQuiz('L3')" ontouchstart="startLevelQuiz('L3')" aria-label="Tunggal"></div>
+                <div class="quiz-hotspot hotspot-majmuk" onclick="startLevelQuiz('L4')" ontouchstart="startLevelQuiz('L4')" aria-label="Majmuk"></div>
+                <div class="quiz-hotspot hotspot-cabaran" onclick="startLevelQuiz('L5')" ontouchstart="startLevelQuiz('L5')" aria-label="Cabaran"></div>
+            </div>
+            <div style="text-align:center;margin-bottom:14px;margin-top:12px;">
+                <button onclick="startRandomQuiz()" style="padding:10px 22px;border-radius:99px;background:var(--orange);font-weight:900;box-shadow:0 4px 0 #d4903a;touch-action:manipulation;">🎲 Kuiz Rawak (10 soalan)</button>
+            </div>
+            <div id="quizPickerList" style="display:flex;flex-direction:column;gap:10px;max-width:850px;margin:0 auto;"></div>
+        </div>
+    </section>
+
+    <!-- ===== LEVEL QUIZ ===== -->
+    <section class="page" id="levelquiz">
+        <div class="wrap">
+            <div class="head"><h1 id="quizLevelTitle">Kuiz</h1></div>
+            <div class="panel" style="max-width:850px;margin:auto;">
+                <div class="q-progress" id="qProgress" style="font-weight:800;color:var(--muted);"></div>
+                <div class="q-text" id="qText"></div>
+                <div class="q-options" id="qOptions"></div>
+                <div class="q-feedback" id="qFeedback"></div>
+                <button class="q-next-btn" id="qNextBtn" onclick="nextQuestion()">Seterusnya ➜</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RESULT ===== -->
+    <section class="page" id="resultpage">
+        <div class="wrap">
+            <div class="panel" style="text-align:center;max-width:850px;margin:auto;padding:30px;">
+                <div id="resultEmoji" style="font-size:4rem;">🎉</div>
+                <h2 id="resultTitle">Hebat!</h2>
+                <p id="resultText" style="font-weight:800;"></p>
+                <div id="resultBadge"></div>
+                <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:16px;">
+                    <button onclick="go('quiz')" style="padding:12px 20px;border-radius:16px;font-weight:900;background:#cbbfa3;touch-action:manipulation;">📝 Kuiz Lain</button>
+                    <button onclick="go('home')" style="padding:12px 20px;border-radius:16px;font-weight:900;background:var(--green);color:white;touch-action:manipulation;">🏠 Menu</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SONG ===== -->
+    <section class="page" id="song">
+        <div class="wrap">
+            <div class="head"><h1>🎵 Lagu Ayat</h1><p>Dengar & ikuti lirik.</p></div>
+            <div class="panel">
+                <div style="background:#f5ede4;border-radius:16px;padding:20px;text-align:center;border:2px solid var(--yellow);margin-bottom:16px;">
+                    <div style="font-size:2.5rem;">🎵</div>
+                    <h3>Dunia Ayat</h3>
+                    <p style="color:var(--muted);">oleh Mr. Kacau</p>
+                    <div style="background:var(--paper);border-radius:10px;padding:8px;margin:10px 0;">
+                        <iframe src="https://drive.google.com/file/d/1gnsgHUv9GUvJts2zo_b5avhQvhvMSVCD/preview" style="width:100%;height:100px;border:0;border-radius:8px;" allow="autoplay"></iframe>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1gnsgHUv9GUvJts2zo_b5avhQvhvMSVCD/view?usp=sharing" target="_blank" style="display:inline-block;padding:8px 18px;border-radius:99px;background:var(--blue);color:white;font-weight:900;text-decoration:none;">⬇ Buka di Google Drive</a>
+                </div>
+                <div class="lyrics-container">
+                    <div class="stanza"><span class="label gold">🎤 Rangkap 1</span><p><span class="emoji-line">🎵</span> <span class="highlight-tunggal">Ayat tunggal</span>, ayat tunggal,</p><p><span class="emoji-line">🎵</span> Mudah sahaja, mari kenal!</p><p><span class="emoji-line">🎵</span> <span class="highlight-tunggal">Ali membaca</span>,</p><p><span class="emoji-line">🎵</span> <span class="highlight-tunggal">Siti menulis</span>,</p><p><span class="emoji-line">🎵</span> Satu ayat, senang sekali!</p></div>
+                    <div class="stanza chorus"><span class="label">🎶 Korus</span><p><span class="emoji-line">🎵</span> <span class="highlight-tunggal">Ayat tunggal</span>, satu sahaja,</p><p><span class="emoji-line">🎵</span> <span class="highlight-majmuk">Ayat majmuk</span>, gabung bersama!</p><p><span class="emoji-line">🎵</span> <span class="highlight-hubung">Dan</span> dan <span class="highlight-hubung">atau</span>, <span class="highlight-hubung">tetapi</span> juga,</p><p><span class="emoji-line">🎵</span> Mari belajar dengan <span class="highlight-seronok">gembira</span>! 🎶</p></div>
+                    <div class="stanza"><span class="label green">🎤 Rangkap 2</span><p><span class="emoji-line">🎵</span> <span class="highlight-majmuk">Ali membaca dan Siti menulis</span>,</p><p><span class="emoji-line">🎵</span> <span class="highlight-majmuk">Adik makan dan abang minum</span>,</p><p><span class="emoji-line">🎵</span> Kamu mahu epal <span class="highlight-hubung">atau</span> pisang?</p><p><span class="emoji-line">🎵</span> Saya suka nasi <span class="highlight-hubung">tetapi</span> adik suka mi!</p></div>
+                    <div class="stanza chorus"><span class="label">🎶 Korus</span><p><span class="emoji-line">🎵</span> <span class="highlight-tunggal">Ayat tunggal</span>, satu sahaja,</p><p><span class="emoji-line">🎵</span> <span class="highlight-majmuk">Ayat majmuk</span>, gabung bersama!</p><p><span class="emoji-line">🎵</span> <span class="highlight-hubung">Dan</span> dan <span class="highlight-hubung">atau</span>, <span class="highlight-hubung">tetapi</span> juga,</p><p><span class="emoji-line">🎵</span> Mari belajar dengan <span class="highlight-seronok">gembira</span>! 🎶</p></div>
+                    <div class="stanza outro"><span class="label">🌟 Penutup</span><p><span class="emoji-line">🎵</span> Tunggal satu, mudah diingat,</p><p><span class="emoji-line">🎵</span> Majmuk bergabung menjadi ayat!</p><p><span class="emoji-line">🎵</span> <span class="highlight-tunggal">Ayat tunggal</span>, <span class="highlight-majmuk">ayat majmuk</span>,</p><p><span class="emoji-line">🎵</span> Belajar bersama, memang <span class="highlight-seronok">seronok</span>! 🎵🌟</p></div>
+                </div>
+                <div style="margin-top:12px;background:var(--sky);border-radius:12px;padding:12px;border:2px dashed var(--blue);">
+                    <p style="font-weight:800;color:var(--muted);margin:0;">💡 Nyanyi lagu ini untuk ingat perbezaan ayat! <button onclick="speakText('Ayat tunggal satu cerita, Ayat majmuk dua idea, Gabungkan dengan kata hubung, Belajar Bahasa Melayu seronok!')" style="background:var(--yellow);border-radius:99px;padding:4px 12px;font-weight:900;touch-action:manipulation;">🔊 Dengar Lirik</button></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MATCH ===== -->
+    <section class="page" id="match">
+        <div class="wrap">
+            <div class="head">
+                <h1>🧩 Padanan Ayat</h1>
+                <p>Kenal pasti sama ada ayat <strong>Tunggal</strong> atau <strong>Majmuk</strong>.</p>
+            </div>
+            <div class="panel" style="max-width:850px;margin:auto;">
+                <div id="matchContainer"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== STORY ===== -->
+    <section class="page" id="story">
+        <div class="wrap">
+            <div class="head"><h1>📖 Pengembaraan Mr Bean</h1><p>Bantu Mr Bean menjelajah kampung!</p></div>
+            <div class="panel" style="max-width:850px;margin:auto;">
+                <div id="storyScene"></div>
+                <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;" id="storyChoicesContainer">
+                    <button id="storyChoice1" class="story-choice" onclick="makeStoryChoice(0)">Pilihan A</button>
+                    <button id="storyChoice2" class="story-choice" onclick="makeStoryChoice(1)">Pilihan B</button>
+                    <button id="storyChoice3" class="story-choice" onclick="makeStoryChoice(2)">Pilihan C</button>
+                </div>
+                <div id="storyAttempts" class="story-attempts" style="display:none;"></div>
+                <div id="storyHintBox" class="story-hint-box"></div>
+                <div id="storyFeedback" style="margin-top:10px;display:none;"></div>
+                <div style="text-align:center;margin-top:14px;">
+                    <button onclick="startStory()" style="padding:10px 20px;border-radius:99px;background:var(--purple);color:white;font-weight:900;touch-action:manipulation;">🔄 Mulakan Semula</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MISI ===== -->
+    <section class="page" id="misi">
+        <div class="wrap">
+            <div class="head"><h1>🗺️ Misi Kampung</h1><p>Jelajah 8 lokasi sambil belajar ayat!</p></div>
+            <div id="misiProgressContainer"></div>
+            <div id="misiLocationGrid" class="misiloc-grid"></div>
+            <div id="misiContent"></div>
+        </div>
+    </section>
+
+    <!-- ===== CHAT ===== -->
+    <div class="chat" id="chat">
+        <div class="chat-head">
+            <img class="avatar" src="https://u294756241.p.clickup-attachments.com/u294756241/601a2210-b070-4ea8-91f5-d775a28f9d46/generated-image-2e314b71-8a85-416a-90e3-1ed87c1adcdd.png?view=open" alt="AI">
+            <div class="info"><h3>🤖 Cik AI <span class="key-status" id="keyStatus">🔑 Percuma</span></h3><p>Tanya apa-apa sahaja!</p></div>
+            <button class="key-btn" onclick="openKeyModal()">🔑 Kekunci</button>
+        </div>
+        <div class="messages" id="messages">
+            <div class="msg bot">👋 Hai! Saya Cik AI. Saya boleh bantu tentang Ayat Tunggal & Majmuk. Masukkan kekunci Gemini untuk tanya <strong>apa-apa soalan</strong>!</div>
+        </div>
+        <div class="quick">
+            <button onclick="askAI('Apa maksud ayat tunggal?')">Ayat tunggal</button>
+            <button onclick="askAI('Beza ayat tunggal & majmuk?')">Beza ayat</button>
+            <button onclick="askAI('Beri contoh ayat majmuk')">Contoh majmuk</button>
+            <button onclick="askAI('Hello!')">Hello</button>
+        </div>
+        <div class="chat-input">
+            <input id="chatInput" placeholder="Taip soalan..." onkeydown="if(event.key==='Enter')sendAIMessage()">
+            <button class="mic-btn" id="micBtn" onclick="startVoiceInput()"><i data-lucide="mic"></i></button>
+            <button class="send" id="sendBtn" onclick="sendAIMessage()"><i data-lucide="send"></i></button>
+        </div>
+    </div>
+
+    <!-- ===== KEY MODAL ===== -->
+    <div class="key-modal" id="keyModal">
+        <div class="modal-box">
+            <button class="close-modal" onclick="closeKeyModal()">✕</button>
+            <h2>🔑 Kekunci Gemini</h2>
+            <p>Masukkan kekunci API Gemini untuk AI penuh. Tanpa kekunci, AI jawab soalan asas BM.</p>
+            <input id="apiKeyInput" type="password" placeholder="Paste Gemini API key...">
+            <div class="actions">
+                <button class="save-btn" onclick="saveApiKey()">💾 Simpan</button>
+                <button class="clear-btn" onclick="clearApiKey()">🗑️ Padam</button>
+            </div>
+            <div class="hint">💡 Dapatkan kekunci <strong>percuma</strong> di <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a>. Kekunci anda tidak dihantar ke pelayan.</div>
+        </div>
+    </div>
+
+    <!-- ===== BOTTOM CONTROLS ===== -->
+    <div class="bottom-right-controls">
+        <div class="music-player" id="musicPlayer">
+            <button id="musicToggleBtn" onclick="toggleBackgroundMusic()"><i data-lucide="music-off"></i></button>
+            <span class="status" id="musicStatus">OFF</span>
+        </div>
+        <div class="offline-badge" id="offlineBadge">
+            <span class="dot" id="offlineDot"></span>
+            <span id="offlineText">Online</span>
+            <span class="cache-count" id="cacheCountSmall">(0)</span>
+            <button class="btn-cache" id="btnCacheSmall">📦</button>
+        </div>
+    </div>
+
+    <button class="fab" onclick="toggleChat()"><img src="https://u294756241.p.clickup-attachments.com/u294756241/601a2210-b070-4ea8-91f5-d775a28f9d46/generated-image-2e314b71-8a85-416a-90e3-1ed87c1adcdd.png?view=open" alt="Cik AI"></button>
+
+    <div class="toast" id="toast"></div>
+    <canvas id="confettiCanvas"></canvas>
+
+    <script>
+        // =========================================================
+        // ====== OFFLINE / SERVICE WORKER (only when hosted) ======
+        // =========================================================
+        (function registerSW() {
+            if ('serviceWorker' in navigator && window.location.protocol === 'https:') {
+                // Inline service worker for caching assets
+                const swScript = `
+                const CACHE_NAME = 'jom-bm-v3';
+                const ASSETS = [
+                    '/',
+                    'https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap',
+                    'https://cdn.jsdelivr.net/npm/lucide@0.383.0/dist/umd/lucide.min.js',
+                    'https://u294756241.p.clickup-attachments.com/u294756241/601a2210-b070-4ea8-91f5-d775a28f9d46/generated-image-2e314b71-8a85-416a-90e3-1ed87c1adcdd.png?view=open',
+                    'https://u294756241.p.clickup-attachments.com/u294756241/81833ab0-fbb9-4617-8197-e5fd53044d6c/generated-image-c3621e54-a982-4950-8287-afe4adb380b5.png?view=open',
+                    'https://u294756241.p.clickup-attachments.com/u294756241/afec2801-1136-41f0-8a31-c4187914180a/generated-image-e475132f-b9e1-4add-b239-c63dc0708aed.png?view=open',
+                    'https://u294756241.p.clickup-attachments.com/u294756241/1fc8ae87-7e89-4ac9-a64f-ed054d12403d/generated-image-57f3a305-1b59-4dcb-9e46-f86cbb8b1b95.png?view=open',
+                    'https://u294756241.p.clickup-attachments.com/u294756241/cd8f5d79-e01e-4b38-8d8a-d85504d6241f/generated-image-3bb457a7-1543-46ac-866f-86f77bf6d9fb.png?view=open',
+                    'https://u294756241.p.clickup-attachments.com/u294756241/eb2e7d6a-9419-4bf1-9502-ab8b53b1c60b/generated-image-74dd5ea3-7d7a-4a36-a35d-02194f91dd83.png?view=open',
+                    'https://u294756241.p.clickup-attachments.com/u294756241/564f21bc-8c65-429c-92ef-6f47e9ee891c/generated-image-39c418f1-5528-4965-959d-93aab6ab5834.png?view=open',
+                    'https://i.postimg.cc/CKBHfZBq/Chat-GPT-Image-Sep-1-2026-10-23-45-PM.png',
+                    'https://i.postimg.cc/MT0sBgcm/MR-BEAN-PETA.png',
+                    'https://i.postimg.cc/QCwM1Tg9/8fe565be-e49b-4b0d-bb82-482c2f88b9a8.png',
+                    'https://img.freepik.com/free-vector/cute-girl-reading-book-cartoon_138676-2975.jpg?w=400&h=300&fit=crop',
+                    'https://img.freepik.com/free-vector/cute-kids-playing-together-cartoon_138676-2977.jpg?w=400&h=300&fit=crop',
+                    'https://img.freepik.com/free-vector/cute-kids-comparing-things-cartoon_138676-2980.jpg?w=400&h=300&fit=crop',
+                    'https://img.freepik.com/free-vector/cute-kids-comparing-things-cartoon_138676-2980.jpg?w=800&h=400&fit=crop',
+                    'https://img.freepik.com/free-vector/cute-girl-reading-book-cartoon_138676-2975.jpg?w=800&h=400&fit=crop',
+                    'https://img.freepik.com/free-vector/cute-kids-playing-together-cartoon_138676-2977.jpg?w=800&h=400&fit=crop'
+                ];
+                self.addEventListener('install', event => {
+                    event.waitUntil(
+                        caches.open(CACHE_NAME).then(cache => {
+                            return cache.addAll(ASSETS).catch(err => console.warn('Cache error:', err));
+                        }).then(() => self.skipWaiting())
+                    );
+                });
+                self.addEventListener('activate', event => {
+                    event.waitUntil(
+                        caches.keys().then(keys => {
+                            return Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key)));
+                        }).then(() => self.clients.claim())
+                    );
+                });
+                self.addEventListener('fetch', event => {
+                    const url = new URL(event.request.url);
+                    if (!url.protocol.startsWith('http')) return;
+                    event.respondWith(
+                        caches.match(event.request).then(cached => {
+                            if (cached) return cached;
+                            return fetch(event.request).then(response => {
+                                const clone = response.clone();
+                                if (response && response.status === 200) {
+                                    caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
+                                }
+                                return response;
+                            }).catch(() => {
+                                if (event.request.mode === 'navigate') {
+                                    return caches.match('/');
+                                }
+                                return new Response('Offline', { status: 503 });
+                            });
+                        })
+                    );
+                });
+                `;
+                const blob = new Blob([swScript], { type: 'application/javascript' });
+                const swUrl = URL.createObjectURL(blob);
+                navigator.serviceWorker.register(swUrl, { scope: '/' })
+                    .then(() => console.log('✅ Service Worker registered'))
+                    .catch(err => console.warn('SW registration failed:', err));
+            }
+        })();
+
+        // =========================================================
+        // ====== SOUND FX ======
+        // =========================================================
+        const SoundFX = {
+            ctx: null,
+            init() {
+                if (!this.ctx) { try { this.ctx = new(window.AudioContext || window.webkitAudioContext)(); } catch (
+                    e) { return false; } }
+                if (this.ctx.state === 'suspended') this.ctx.resume();
+                return true;
+            },
+            play(type) {
+                if (!this.init()) return;
+                try {
+                    const now = this.ctx.currentTime;
+                    if (type === 'click') { const o = this.ctx.createOscillator(),
+                            g = this.ctx.createGain();
+                        o.connect(g);
+                        g.connect(this.ctx.destination);
+                        o.type = 'sine';
+                        o.frequency.value = 880;
+                        g.gain.setValueAtTime(0.08, now);
+                        g.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+                        o.start(now);
+                        o.stop(now + 0.08); } else if (type === 'correct') { [523.25, 659.25, 783.99].forEach((f,
+                            i) => { const o = this.ctx.createOscillator(),
+                                g = this.ctx.createGain();
+                            o.connect(g);
+                            g.connect(this.ctx.destination);
+                            o.type = 'sine';
+                            o.frequency.value = f;
+                            g.gain.setValueAtTime(0.10, now + i * 0.12);
+                            g.gain.exponentialRampToValueAtTime(0.001, now + i * 0.12 + 0.15);
+                            o.start(now + i * 0.12);
+                            o.stop(now + i * 0.12 + 0.15); }); } else if (type === 'wrong') { [523.25, 440]
+                        .forEach((f, i) => { const o = this.ctx.createOscillator(),
+                                g = this.ctx.createGain();
+                            o.connect(g);
+                            g.connect(this.ctx.destination);
+                            o.type = 'sine';
+                            o.frequency.value = f;
+                            g.gain.setValueAtTime(0.08, now + i * 0.15);
+                            g.gain.exponentialRampToValueAtTime(0.001, now + i * 0.15 + 0.18);
+                            o.start(now + i * 0.15);
+                            o.stop(now + i * 0.15 + 0.18); }); } else if (type === 'xp') { [523.25, 587.33,
+                            659.25, 739.99
+                        ].forEach((f, i) => { const o = this.ctx.createOscillator(),
+                                g = this.ctx.createGain();
+                            o.connect(g);
+                            g.connect(this.ctx.destination);
+                            o.type = 'sine';
+                            o.frequency.value = f;
+                            g.gain.setValueAtTime(0.07, now + i * 0.06);
+                            g.gain.exponentialRampToValueAtTime(0.001, now + i * 0.06 + 0.10);
+                            o.start(now + i * 0.06);
+                            o.stop(now + i * 0.06 + 0.10); }); } else if (type === 'complete') { [523.25, 659.25,
+                            783.99, 1046.5
+                        ].forEach((f, i) => { const o = this.ctx.createOscillator(),
+                                g = this.ctx.createGain();
+                            o.connect(g);
+                            g.connect(this.ctx.destination);
+                            o.type = 'square';
+                            o.frequency.value = f;
+                            g.gain.setValueAtTime(0.05, now + i * 0.15);
+                            g.gain.exponentialRampToValueAtTime(0.001, now + i * 0.15 + 0.20);
+                            o.start(now + i * 0.15);
+                            o.stop(now + i * 0.15 + 0.20); }); } else if (type === 'notification') { const o =
+                            this.ctx.createOscillator(),
+                            g = this.ctx.createGain();
+                        o.connect(g);
+                        g.connect(this.ctx.destination);
+                        o.type = 'sine';
+                        o.frequency.value = 1200;
+                        g.gain.setValueAtTime(0.06, now);
+                        g.gain.exponentialRampToValueAtTime(0.001, now + 0.06);
+                        o.start(now);
+                        o.stop(now + 0.06);
+                        setTimeout(() => { const o2 = this.ctx.createOscillator(),
+                                g2 = this.ctx.createGain();
+                            o2.connect(g2);
+                            g2.connect(this.ctx.destination);
+                            o2.type = 'sine';
+                            o2.frequency.value = 1500;
+                            g2.gain.setValueAtTime(0.06, now + 0.10);
+                            g2.gain.exponentialRampToValueAtTime(0.001, now + 0.16);
+                            o2.start(now + 0.10);
+                            o2.stop(now + 0.16); }, 100); }
+                } catch (e) {}
+            }
+        };
+
+        // =========================================================
+        // ====== CONFETTI ======
+        // =========================================================
+        const confettiCanvas = document.getElementById('confettiCanvas');
+        const ctxC = confettiCanvas.getContext('2d');
+        let confettiPieces = [],
+            confettiRunning = false;
+
+        function resizeConfetti() { confettiCanvas.width = window.innerWidth;
+            confettiCanvas.height = window.innerHeight; }
+        window.addEventListener('resize', resizeConfetti);
+
+        function launchConfetti(duration = 3000) {
+            if (confettiRunning) return;
+            resizeConfetti();
+            confettiPieces = [];
+            for (let i = 0; i < 150; i++) {
+                confettiPieces.push({
+                    x: Math.random() * confettiCanvas.width,
+                    y: Math.random() * confettiCanvas.height - confettiCanvas.height,
+                    w: Math.random() * 10 + 5,
+                    h: Math.random() * 6 + 3,
+                    color: `hsl(${Math.random()*360},80%,60%)`,
+                    speed: Math.random() * 4 + 2,
+                    angle: Math.random() * 2 * Math.PI,
+                    spin: (Math.random() - 0.5) * 0.1,
+                    opacity: 1,
+                });
+            }
+            confettiRunning = true;
+            let start = Date.now();
+
+            function anim() {
+                const elapsed = Date.now() - start;
+                if (elapsed > duration) { confettiRunning = false;
+                    ctxC.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height); return; }
+                ctxC.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+                confettiPieces.forEach(p => {
+                    p.y += p.speed * 0.6;
+                    p.x += Math.sin(p.angle) * 1.2;
+                    p.angle += p.spin;
+                    if (p.y > confettiCanvas.height + 20) { p.y = -20;
+                        p.x = Math.random() * confettiCanvas.width; }
+                    ctxC.save();
+                    ctxC.translate(p.x, p.y);
+                    ctxC.rotate(p.angle);
+                    ctxC.globalAlpha = p.opacity * (1 - elapsed / duration * 0.5);
+                    ctxC.fillStyle = p.color;
+                    ctxC.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+                    ctxC.restore();
+                });
+                requestAnimationFrame(anim);
+            }
+            anim();
+        }
+
+        // =========================================================
+        // ====== NAVIGATION ======
+        // =========================================================
+        function go(id) {
+            SoundFX.play('click');
+            document.querySelectorAll('.page').forEach(x => x.classList.remove('active'));
+            const target = document.getElementById(id);
+            if (target) target.classList.add('active');
+            document.querySelectorAll('.links button').forEach(x => x.classList.toggle('active', x.dataset.p === id));
+            document.getElementById('links').classList.remove('open');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (id === 'quiz') openQuizPicker();
+            if (id === 'match') renderMatch();
+            if (id === 'story') setTimeout(() => renderStory('start'), 100);
+            if (id === 'misi') renderMisi();
+        }
+
+        // =========================================================
+        // ====== MAP ======
+        // =========================================================
+        const mapData = {
+            home: ['Rumah Mr Bean', 'Nota dan contoh mudah.', 'Nota dan contoh mudah.',
+                'https://u294756241.p.clickup-attachments.com/u294756241/1fc8ae87-7e89-4ac9-a64f-ed054d12403d/generated-image-57f3a305-1b59-4dcb-9e46-f86cbb8b1b95.png?view=open',
+                ['nota', 'contoh'], 'topics'
+            ],
+            garden: ['Taman Seronok', 'Ayat Tunggal = satu idea utama.', 'Belajar Ayat Tunggal dengan contoh.',
+                'https://u294756241.p.clickup-attachments.com/u294756241/cd8f5d79-e01e-4b38-8d8a-d85504d6241f/generated-image-3bb457a7-1543-46ac-866f-86f77bf6d9fb.png?view=open',
+                ['Ayat Tunggal', 'Siti membaca buku.'], 'at'
+            ],
+            museum: ['Sekolah Ilmu', 'Semak nota dan maksud penting.', 'Baca dan faham.',
+                'https://u294756241.p.clickup-attachments.com/u294756241/1fc8ae87-7e89-4ac9-a64f-ed054d12403d/generated-image-57f3a305-1b59-4dcb-9e46-f86cbb8b1b95.png?view=open',
+                ['nota', 'contoh'], 'topics'
+            ],
+            cafe: ['Kafe Kegemaran', 'Tempat latihan bahasa.', 'Cuba dan semak jawapan.',
+                'https://u294756241.p.clickup-attachments.com/u294756241/eb2e7d6a-9419-4bf1-9502-ab8b53b1c60b/generated-image-74dd5ea3-7d7a-4a36-a35d-02194f91dd83.png?view=open',
+                ['latihan', 'skor'], 'quiz'
+            ],
+            castle: ['Perpustakaan', 'Ayat Majmuk = dua idea atau lebih.', 'Belajar Ayat Majmuk dan kata hubung.',
+                'https://u294756241.p.clickup-attachments.com/u294756241/564f21bc-8c65-429c-92ef-6f47e9ee891c/generated-image-39c418f1-5528-4965-959d-93aab6ab5834.png?view=open',
+                ['dan', 'tetapi', 'kerana'], 'am'
+            ],
+            robot: ['Bengkel Robot', 'Tanya Cik AI jika keliru.', 'Tanya soalan. Dapatkan petunjuk.',
+                'https://u294756241.p.clickup-attachments.com/u294756241/601a2210-b070-4ea8-91f5-d775a28f9d46/generated-image-2e314b71-8a85-416a-90e3-1ed87c1adcdd.png?view=open',
+                ['tanya', 'contoh'], 'ai'
+            ]
+        };
+        let current = 'home';
+
+        function pick(k, el) {
+            current = k;
+            SoundFX.play('click');
+            let d = mapData[k];
+            document.querySelectorAll('.pin').forEach(x => x.classList.remove('selected'));
+            if (el) el.classList.add('selected');
+            document.getElementById('mapTitle').textContent = d[0];
+            document.getElementById('mapText').textContent = d[1];
+            document.getElementById('mapBox').textContent = d[2];
+            document.getElementById('mapHint').textContent = 'Tekan Teruskan untuk maklumat.';
+        }
+
+        function continueMap() {
+            SoundFX.play('click');
+            let d = mapData[current];
+            if (d[5] === 'ai') { toggleChat(); return; }
+            if (d[5] === 'quiz') { go('quiz'); return; }
+            document.getElementById('infoTitle').textContent = d[0];
+            document.getElementById('infoText').textContent = d[1];
+            document.getElementById('infoImg').src = d[3];
+            document.getElementById('tags').innerHTML = d[4].map(x => `<span class="tag">${x}</span>`).join('');
+            document.getElementById('mapInfo').classList.add('open');
+            document.getElementById('mapInfo').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function openMaterial() {
+            SoundFX.play('click');
+            let n = mapData[current][5];
+            if (n === 'ai') { toggleChat(); return; }
+            if (n === 'quiz') { go('quiz'); return; }
+            if (n === 'topics') { go('topics');
+                closeMapInfo(); return; }
+            if (n === 'at' || n === 'am' || n === 'beza') { go('topics');
+                setTimeout(() => { closeMapInfo();
+                    openTopic(n); }, 150); return; }
+            go('topics');
+            closeMapInfo();
+        }
+
+        function closeMapInfo() { SoundFX.play('click');
+            document.getElementById('mapInfo').classList.remove('open'); }
+
+        // =========================================================
+        // ====== TOPICS ======
+        // =========================================================
+        function openTopic(id) {
+            SoundFX.play('click');
+            const el = document.getElementById('note-' + id);
+            if (!el) { document.getElementById('topicGrid').style.display = 'grid'; return; }
+            document.getElementById('topicGrid').style.display = 'none';
+            document.querySelectorAll('.note').forEach(x => x.classList.remove('open'));
+            el.classList.add('open');
+            window.scrollTo({ top: 90, behavior: 'smooth' });
+        }
+
+        function closeTopic() {
+            SoundFX.play('click');
+            document.getElementById('topicGrid').style.display = 'grid';
+            document.querySelectorAll('.note').forEach(x => x.classList.remove('open'));
+        }
+
+        function cn(id) { document.getElementById(id).classList.toggle('show'); }
+
+        // =========================================================
+        // ====== SPEECH ======
+        // =========================================================
+        let speechInitialized = false;
+
+        function initSpeech() {
+            if ('speechSynthesis' in window) {
+                speechSynthesis.getVoices();
+                speechInitialized = true;
+            }
+        }
+        initSpeech();
+        if (window.speechSynthesis) {
+            speechSynthesis.onvoiceschanged = initSpeech;
+        }
+
+        function speakText(text) {
+            SoundFX.play('click');
+            if (!('speechSynthesis' in window)) {
+                showToast('🔊 Pelayar tidak sokong text-to-speech.');
+                return;
+            }
+            try {
+                speechSynthesis.cancel();
+                const u = new SpeechSynthesisUtterance(text);
+                u.lang = 'ms-MY';
+                u.rate = 0.85;
+                u.pitch = 1.0;
+                const voices = speechSynthesis.getVoices();
+                const msVoice = voices.find(v => v.lang.startsWith('ms'));
+                if (msVoice) u.voice = msVoice;
+                speechSynthesis.speak(u);
+            } catch (e) {
+                showToast('🔊 Maaf, suara tidak tersedia.');
+                console.warn('speech error:', e);
+            }
+        }
+
+        // =========================================================
+        // ====== BACKGROUND MUSIC ======
+        // =========================================================
+        let bgCtx = null,
+            bgG1, bgG2, bgG3, bgO1, bgO2, bgO3,
+            bgOn = false;
+
+        function toggleBackgroundMusic() {
+            SoundFX.play('click');
+            const btn = document.getElementById('musicToggleBtn');
+            const status = document.getElementById('musicStatus');
+            if (!bgCtx) {
+                try {
+                    bgCtx = new(window.AudioContext || window.webkitAudioContext)();
+                    if (bgCtx.state === 'suspended') bgCtx.resume();
+                    bgG1 = bgCtx.createGain();
+                    bgG1.gain.value = 0;
+                    bgG1.connect(bgCtx.destination);
+                    bgG2 = bgCtx.createGain();
+                    bgG2.gain.value = 0;
+                    bgG2.connect(bgCtx.destination);
+                    bgG3 = bgCtx.createGain();
+                    bgG3.gain.value = 0;
+                    bgG3.connect(bgCtx.destination);
+                    bgO1 = bgCtx.createOscillator();
+                    bgO1.type = 'sine';
+                    bgO1.frequency.value = 523.25;
+                    bgO1.connect(bgG1);
+                    bgO2 = bgCtx.createOscillator();
+                    bgO2.type = 'sine';
+                    bgO2.frequency.value = 659.25;
+                    bgO2.connect(bgG2);
+                    bgO3 = bgCtx.createOscillator();
+                    bgO3.type = 'sine';
+                    bgO3.frequency.value = 783.99;
+                    bgO3.connect(bgG3);
+                    bgO1.start();
+                    bgO2.start();
+                    bgO3.start();
+                    bgOn = false;
+                    btn.innerHTML = '<i data-lucide="music-off"></i>';
+                    status.textContent = 'OFF';
+                    lucide.createIcons();
+                    showToast('🎵 Muzik sedia. Tekan untuk hidupkan.');
+                    return;
+                } catch (e) { showToast('❌ Muzik tidak dapat dimainkan.'); return; }
+            }
+            if (bgOn) {
+                bgG1.gain.value = 0;
+                bgG2.gain.value = 0;
+                bgG3.gain.value = 0;
+                bgOn = false;
+                btn.innerHTML = '<i data-lucide="music-off"></i>';
+                status.textContent = 'OFF';
+                showToast('🔇 Muzik dimatikan.');
+                lucide.createIcons();
+            } else {
+                try {
+                    if (bgCtx && bgCtx.state === 'suspended') bgCtx.resume();
+                    bgG1.gain.value = 0.12;
+                    bgG2.gain.value = 0.10;
+                    bgG3.gain.value = 0.08;
+                    bgOn = true;
+                    btn.innerHTML = '<i data-lucide="music"></i>';
+                    status.textContent = 'ON';
+                    showToast('🎵 Muzik latar dihidupkan!');
+                    lucide.createIcons();
+                } catch (e) { showToast('❌ Gagal menghidupkan muzik.'); }
+            }
+        }
+
+        // =========================================================
+        // ====== XP SYSTEM ======
+        // =========================================================
+        let userXP = 120;
+
+        function addXP(amount) {
+            if (!amount || isNaN(amount)) amount = 5;
+            userXP += amount;
+            document.getElementById('xp').textContent = userXP + ' XP';
+            showToast(`✨ +${amount} XP! Jumlah: ${userXP} XP`);
+            SoundFX.play('xp');
+        }
+
+        // =========================================================
+        // ====== MATCH ======
+        // =========================================================
+        const matchData = [
+            { sentence: 'Ali membaca buku.', correct: 'tunggal' },
+            { sentence: 'Siti menulis nota dan adik melukis.', correct: 'majmuk' },
+            { sentence: 'Kucing itu tidur di atas sofa.', correct: 'tunggal' },
+            { sentence: 'Ibu memasak nasi tetapi ayah membeli kuih.', correct: 'majmuk' },
+            { sentence: 'Ahmad berlari dengan pantas.', correct: 'tunggal' },
+            { sentence: 'Mereka menyanyi sambil menari.', correct: 'majmuk' }
+        ];
+        let matchAnswered = {},
+            matchTotal = matchData.length;
+
+        function renderMatch() {
+            const container = document.getElementById('matchContainer');
+            let html = `
+                <div class="match-progress">Padankan ayat dengan jenis yang betul: <span id="matchScoreDisplay">0/${matchTotal}</span></div>
+                <div class="match-grid" id="matchGrid">
+            `;
+            matchData.forEach((item, idx) => {
+                const ans = matchAnswered[idx];
+                let cardClass = 'match-card';
+                if (ans !== undefined) cardClass += ' answered';
+                if (ans === true) cardClass += ' correct';
+                else if (ans === false) cardClass += ' wrong';
+                html += `
+                    <div class="${cardClass}" data-idx="${idx}">
+                        <div class="sentence">${item.sentence}</div>
+                        <div class="options">
+                            <button onclick="matchAnswer(${idx}, 'tunggal')" ${ans!==undefined?'disabled':''} class="${ans!==undefined && item.correct==='tunggal'?'selected':''}">Tunggal</button>
+                            <button onclick="matchAnswer(${idx}, 'majmuk')" ${ans!==undefined?'disabled':''} class="${ans!==undefined && item.correct==='majmuk'?'selected':''}">Majmuk</button>
+                        </div>
+                        ${ans!==undefined ? `<div style="margin-top:6px;font-weight:800;font-size:.8rem;color:${ans?'var(--green-deep)':'var(--red)'};">${ans?'✅ Betul!':'❌ Cuba lagi'}</div>` : ''}
+                    </div>
+                `;
+            });
+            html += `</div>`;
+            if (Object.keys(matchAnswered).length === matchTotal) {
+                const correctCount = Object.values(matchAnswered).filter(v => v === true).length;
+                const pct = Math.round((correctCount / matchTotal) * 100);
+                let emoji = pct >= 80 ? '🏆' : (pct >= 50 ? '💪' : '📖');
+                let msg = pct >= 80 ? 'Tahniah! Anda hebat!' : (pct >= 50 ? 'Bagus! Teruskan!' : 'Cuba lagi!');
+                if (pct === 100) { addXP(15);
+                    launchConfetti(3000);
+                    SoundFX.play('complete'); } else if (pct >= 80) { addXP(10);
+                    SoundFX.play('complete'); } else if (pct >= 50) { addXP(5); }
+                html += `
+                    <div class="match-result">
+                        <div class="emoji">${emoji}</div>
+                        <h2>${msg}</h2>
+                        <p>Anda menjawab ${correctCount} / ${matchTotal} dengan betul (${pct}%)</p>
+                        <button onclick="resetMatch()" style="padding:10px 24px;border-radius:99px;background:var(--purple);color:white;font-weight:900;margin-top:12px;touch-action:manipulation;">🔄 Ulang Padanan</button>
+                        <button onclick="go('home')" style="padding:10px 24px;border-radius:99px;background:var(--green);color:white;font-weight:900;margin-top:12px;margin-left:8px;touch-action:manipulation;">🏠 Menu</button>
+                    </div>
+                `;
+            }
+            container.innerHTML = html;
+            document.getElementById('matchScoreDisplay').textContent = `${Object.values(matchAnswered).filter(v=>v===true).length}/${matchTotal}`;
+        }
+
+        function matchAnswer(idx, type) {
+            if (matchAnswered[idx] !== undefined) return;
+            SoundFX.play('click');
+            const item = matchData[idx];
+            const isCorrect = (type === item.correct);
+            matchAnswered[idx] = isCorrect;
+            if (isCorrect) { addXP(5);
+                SoundFX.play('correct');
+                showToast('✅ Betul! +5 XP'); } else { SoundFX.play('wrong');
+                showToast('😅 Cuba lagi! Jawapan: ' + (item.correct === 'tunggal' ? 'Ayat Tunggal' : 'Ayat Majmuk')); }
+            renderMatch();
+        }
+
+        function resetMatch() {
+            SoundFX.play('click');
+            matchAnswered = {};
+            renderMatch();
+            showToast('🔄 Padanan dimulakan semula!');
+        }
+
+        // =========================================================
+        // ====== KUIZ ======
+        // =========================================================
+        const LEVELS = [
+            { id: 'L3', name: 'Ayat Tunggal', icon: '🍰', quiz: [5, 7, 10, 14] },
+            { id: 'L4', name: 'Ayat Majmuk', icon: '🏫', quiz: [6, 8, 9, 13, 15, 19] },
+            { id: 'L5', name: 'Cabaran Akhir', icon: '🎯', quiz: [17, 18, 20, 6, 11, 14] }
+        ];
+        const QUESTIONS = {
+            5: { text: '"Si Kacau makan kek." Apakah jenis ayat?', opts: ['ayat tunggal', 'ayat majmuk', 'kata tunggal',
+                    'kata majmuk'
+                ], ans: 0 },
+            6: { text: '"Si Kacau membuka pintu dan masuk ke rumah." Apakah jenis ayat?', opts: ['ayat tunggal',
+                    'ayat majmuk', 'kata tunggal', 'kata majmuk'
+                ], ans: 1 },
+            7: { text: 'Manakah ayat tunggal?', opts: ['Si Kacau membaca buku.', 'Si Kacau makan dan minum.',
+                    'Si Kacau berlari lalu jatuh.', 'Si Kacau tidur kerana penat.'
+                ], ans: 0 },
+            8: { text: 'Manakah ayat majmuk?', opts: ['Si Kacau tidur.', 'Si Kacau makan nasi.',
+                    'Si Kacau bermain dan ketawa.', 'Si Kacau membaca buku.'
+                ], ans: 2 },
+            9: { text: '"kerana" menunjukkan hubungan...', opts: ['sebab', 'tempat', 'warna', 'masa'], ans: 0 },
+            10: { text: '"Si Kacau bermain dengan teddy bear." Apakah jenis ayat?', opts: ['ayat majmuk', 'ayat tunggal',
+                    'kata tunggal', 'kata majmuk'
+                ], ans: 1 },
+            13: { text: '"Si Kacau memakai kasut dan membawa beg." Apakah jenis ayat?', opts: ['ayat tunggal',
+                    'ayat majmuk', 'kata tunggal', 'kata majmuk'
+                ], ans: 1 },
+            14: { text: 'Manakah ayat satu idea utama?', opts: ['Si Kacau makan dan minum.',
+                    'Si Kacau berlari lalu jatuh.', 'Si Kacau membaca buku.',
+                    'Si Kacau ketawa kerana gembira.'
+                ], ans: 2 },
+            15: { text: 'Apakah dua perbuatan?', opts: ['berlari dan membeli', 'kedai dan aiskrim',
+                    'Si Kacau dan kedai', 'membeli dan aiskrim'
+                ], ans: 0 },
+            17: { text: 'Ayat mengandungi kata majmuk + ayat tunggal?', opts: ['Si Kacau menaiki kereta api.',
+                    'Si Kacau menaiki kereta api dan membeli tiket.',
+                    'Si Kacau makan kek dan minum susu.', 'Si Kacau membaca buku.'
+                ], ans: 0 },
+            18: { text: 'Ayat mengandungi kata majmuk + ayat majmuk?', opts: ['Si Kacau membaca buku.',
+                    'Si Kacau menaiki kereta api.',
+                    'Si Kacau menaiki kereta api dan membeli alat tulis.', 'Si Kacau makan kek.'
+                ], ans: 2 },
+            19: { text: '"tetapi" dalam ayat menunjukkan...', opts: ['ayat tunggal', 'ayat majmuk', 'kata tunggal',
+                    'kata majmuk'
+                ], ans: 1 },
+            20: { text: 'CABARAN AKHIR! "Si Kacau menaiki kereta api dan membawa alat tulis."', opts: [
+                    'Kata tunggal + ayat tunggal', 'Kata majmuk + ayat tunggal',
+                    'Kata tunggal + ayat majmuk', 'Kata majmuk + ayat majmuk'
+                ], ans: 3 }
+        };
+
+        let quizQueue = [],
+            quizIndex = 0,
+            quizCorrectCount = 0,
+            quizContextLevel = null,
+            isRandomQuiz = false;
+
+        function openQuizPicker() {
+            const wrap = document.getElementById('quizPickerList');
+            wrap.innerHTML = '';
+            LEVELS.forEach(lv => {
+                const div = document.createElement('div');
+                div.className = 'quiz-picker-item';
+                div.innerHTML =
+                    `<div class="icon">${lv.icon}</div><div class="info"><h3>${lv.name}</h3><p>${lv.id==='L3'?'Kenali Ayat Tunggal':lv.id==='L4'?'Kenali Ayat Majmuk':'Cabaran gabungan semua topik!'}</p></div><button class="btn-start" onclick="startLevelQuiz('${lv.id}')">Mula ➜</button>`;
+                wrap.appendChild(div);
+            });
+        }
+
+        function startRandomQuiz() {
+            SoundFX.play('click');
+            const all = Object.keys(QUESTIONS).map(Number);
+            const shuffled = all.sort(() => 0.5 - Math.random()).slice(0, 10);
+            if (shuffled.length < 5) { showToast('⚠️ Tidak cukup soalan!'); return; }
+            isRandomQuiz = true;
+            quizContextLevel = { name: 'Kuiz Rawak', icon: '🎲' };
+            quizQueue = shuffled;
+            quizIndex = 0;
+            quizCorrectCount = 0;
+            document.getElementById('quizLevelTitle').textContent = `🎲 Kuiz Rawak (${quizQueue.length} soalan)`;
+            document.getElementById('qNextBtn').classList.remove('show');
+            document.getElementById('qNextBtn').style.display = 'none';
+            go('levelquiz');
+            renderQuestion();
+        }
+
+        function startLevelQuiz(levelId) {
+            SoundFX.play('click');
+            isRandomQuiz = false;
+            const lv = LEVELS.find(l => l.id === levelId);
+            quizContextLevel = lv;
+            quizQueue = [...lv.quiz];
+            quizIndex = 0;
+            quizCorrectCount = 0;
+            document.getElementById('quizLevelTitle').textContent = `${lv.icon} ${lv.name}`;
+            document.getElementById('qNextBtn').classList.remove('show');
+            document.getElementById('qNextBtn').style.display = 'none';
+            go('levelquiz');
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            const qid = quizQueue[quizIndex];
+            const q = QUESTIONS[qid];
+            if (!q) { finishQuiz(); return; }
+            document.getElementById('qProgress').textContent = `Soalan ${quizIndex+1} / ${quizQueue.length}`;
+            document.getElementById('qText').textContent = q.text;
+            const optWrap = document.getElementById('qOptions');
+            optWrap.innerHTML = '';
+            const letters = ['A', 'B', 'C', 'D'];
+            document.getElementById('qNextBtn').classList.remove('show');
+            document.getElementById('qNextBtn').style.display = 'none';
+            q.opts.forEach((opt, i) => {
+                const b = document.createElement('button');
+                b.className = 'q-opt-btn';
+                b.innerHTML = `<span class="letter">${letters[i]}</span><span>${opt}</span>`;
+                b.onclick = () => answerQuestion(i, b);
+                optWrap.appendChild(b);
+            });
+            const fb = document.getElementById('qFeedback');
+            fb.className = 'q-feedback';
+            fb.textContent = '';
+            fb.style.display = 'none';
+        }
+
+        function answerQuestion(i, btnEl) {
+            const qid = quizQueue[quizIndex];
+            const q = QUESTIONS[qid];
+            const allBtns = document.querySelectorAll('#qOptions .q-opt-btn');
+            allBtns.forEach(b => b.disabled = true);
+            const fb = document.getElementById('qFeedback');
+            fb.style.display = 'block';
+            if (i === q.ans) {
+                btnEl.classList.add('correct');
+                fb.className = 'q-feedback show good';
+                fb.textContent = '🎉 Hebat! Betul!';
+                quizCorrectCount++;
+                SoundFX.play('correct');
+                document.getElementById('stars').textContent = parseInt(document.getElementById('stars').textContent) + 1;
+                addXP(5);
+            } else {
+                btnEl.classList.add('wrong');
+                allBtns[q.ans].classList.add('correct');
+                fb.className = 'q-feedback show retry';
+                fb.textContent = '😊 Hampir betul! Cuba lagi.';
+                SoundFX.play('wrong');
+            }
+            const nextBtn = document.getElementById('qNextBtn');
+            nextBtn.style.display = 'inline-flex';
+            setTimeout(() => nextBtn.classList.add('show'), 300);
+        }
+
+        function nextQuestion() {
+            SoundFX.play('click');
+            quizIndex++;
+            if (quizIndex >= quizQueue.length) { finishQuiz(); return; }
+            renderQuestion();
+        }
+
+        function finishQuiz() {
+            SoundFX.play('complete');
+            const lv = quizContextLevel;
+            const total = quizQueue.length;
+            const pct = Math.round((quizCorrectCount / total) * 100);
+            document.getElementById('resultEmoji').textContent = pct >= 80 ? '🏆' : '💪';
+            document.getElementById('resultTitle').textContent = pct >= 80 ? 'Tahniah! 🎉' : 'Bagus! Teruskan!';
+            document.getElementById('resultText').textContent =
+                `Kamu jawab ${quizCorrectCount}/${total} betul (${pct}%) di ${lv.name}!`;
+            let badge = '';
+            if (pct >= 80) {
+                badge =
+                    `<div style="font-size:2.4rem;">🏅</div><p style="font-weight:800;color:var(--green-deep);">Lencana: ${lv.name}!</p>`;
+                addXP(20);
+                launchConfetti(4000);
+            } else if (pct >= 50) {
+                badge =
+                    `<div style="font-size:2.4rem;">⭐</div><p style="font-weight:800;color:var(--blue);">Teruskan usaha! ${pct}%</p>`;
+                addXP(10);
+            } else {
+                badge =
+                    `<div style="font-size:2.4rem;">📖</div><p style="font-weight:800;color:var(--muted);">Baca nota dan cuba lagi!</p>`;
+            }
+            document.getElementById('resultBadge').innerHTML = badge;
+            document.getElementById('done').textContent = `${Object.keys(LEVELS).length}/3`;
+            go('resultpage');
+        }
+
+        // =========================================================
+        // ====== STORY ======
+        // =========================================================
+        const STORY_MAP_IMAGE = 'https://i.postimg.cc/QCwM1Tg9/8fe565be-e49b-4b0d-bb82-482c2f88b9a8.png';
+        const storyData = {
+            scenes: {
+                start: {
+                    id: 'start',
+                    text: '🌅 Mr Bean bangun pagi dan ingin pergi ke pasar. Dia perlu memilih cara untuk ke sana. <br><br>🧸 "Hari ini saya nak belajar ayat baru!"',
+                    image: STORY_MAP_IMAGE,
+                    choices: [{ text: '🚶 Jalan kaki', next: 'jalan_kaki' }, { text: '🚗 Naik kereta',
+                        next: 'naik_kereta' }]
+                },
+                jalan_kaki: {
+                    id: 'jalan_kaki',
+                    text: '🚶 Mr Bean berjalan dan ternampak sebuah kedai. Dia berkata: "Saya ___ roti." <br><br>Pilih kata kerja yang sesuai untuk melengkapkan Ayat Tunggal:',
+                    choices: [{ text: '🍞 makan', next: 'beli_roti' }, { text: '🥤 minum', next: 'minum_air' }],
+                    grammarTip: 'Ayat Tunggal – satu perbuatan sahaja.'
+                },
+                naik_kereta: {
+                    id: 'naik_kereta',
+                    text: '🚗 Mr Bean memandu tetapi tersesat. Dia tanya penduduk: "Di mana pasar?" <br><br>Penduduk menjawab: "Pasar di hadapan, ___ belok kiri." <br><br>Pilih kata hubung yang betul:',
+                    choices: [{ text: 'dan', next: 'sampai_pasar' }, { text: 'tetapi', next: 'tersesat_lagi' }],
+                    grammarTip: 'Ayat Majmuk – menggunakan kata hubung.'
+                },
+                beli_roti: {
+                    id: 'beli_roti',
+                    text: '🍞 Mr Bean membeli roti. Dia gembira dan berkata: "Roti ini sedap!" <br><br>Apakah jenis ayat ini?',
+                    choices: [{ text: 'Ayat Tunggal', next: 'akhir_gembira' }, { text: 'Ayat Majmuk',
+                        next: 'akhir_sedih' }],
+                    correct: 0,
+                    grammarTip: 'Ayat Tunggal – satu idea utama.',
+                    hint: '💡 Ingat: "Roti ini sedap!" — satu pernyataan, satu idea.'
+                },
+                minum_air: {
+                    id: 'minum_air',
+                    text: '🥤 Mr Bean minum air dan terus ke pasar. Dia membeli sayur dan buah. <br><br>Yang manakah Ayat Majmuk?',
+                    choices: [{ text: 'Saya minum air dan pergi pasar.', next: 'akhir_gembira' }, { text: 'Saya minum air.',
+                        next: 'akhir_sedih' }],
+                    correct: 0,
+                    grammarTip: 'Ayat Majmuk – dua idea dengan kata hubung "dan".',
+                    hint: '💡 Cari ayat yang ada dua perbuatan digabungkan dengan "dan".'
+                },
+                sampai_pasar: {
+                    id: 'sampai_pasar',
+                    text: '🏪 Mr Bean sampai ke pasar dan membeli banyak barang. Dia gembira! <br><br>🎉 "Saya berjaya!"',
+                    choices: [],
+                    final: true,
+                    message: '🎉 Tahniah! Mr Bean berjaya ke pasar! Kamu telah menggunakan kata hubung dengan betul!'
+                },
+                tersesat_lagi: {
+                    id: 'tersesat_lagi',
+                    text: '😅 Mr Bean tersesat lagi kerana memilih kata hubung yang salah. <br><br>💡 Ingat: "dan" menggabungkan dua idea yang setara. "tetapi" menunjukkan pertentangan.',
+                    choices: [{ text: '🔄 Cuba Semula', next: 'start' }],
+                    grammarTip: 'Gunakan "dan" untuk menggabungkan dua idea yang sama penting.'
+                },
+                akhir_gembira: {
+                    id: 'akhir_gembira',
+                    text: '🎉 Mr Bean pulang dengan senyuman. Dia belajar banyak ayat hari ini! <br><br>🧸 "Saya faham sekarang!"',
+                    choices: [],
+                    final: true,
+                    message: '🌟 Hebat! Anda telah membantu Mr Bean dan menguasai Ayat Tunggal & Majmuk!'
+                },
+                akhir_sedih: {
+                    id: 'akhir_sedih',
+                    text: '😢 Mr Bean kecewa kerana pilihan ayat tidak tepat. <br><br>💡 Jangan putus asa! Cuba bezakan Ayat Tunggal (satu idea) dan Ayat Majmuk (dua idea).',
+                    choices: [{ text: '🔄 Cuba Semula', next: 'start' }]
+                }
+            }
+        };
+        let currentScene = 'start';
+        let storyAttempts = {};
+
+        function renderStory(sceneId) {
+            const scene = storyData.scenes[sceneId];
+            if (!scene) { showToast('⚠️ Sesi tidak dijumpai.'); return; }
+            currentScene = sceneId;
+            if (scene.correct !== undefined && !storyAttempts[sceneId]) storyAttempts[sceneId] = 0;
+            const container = document.getElementById('storyScene');
+            if (!container) return;
+            let html = '';
+            if (scene.image) html += `<img src="${scene.image}" class="story-scene-img" alt="Scene" loading="lazy">`;
+            html += `<div class="story-scene-text">${scene.text}</div>`;
+            if (scene.grammarTip) html += `<div class="story-grammar-tip">💡 ${scene.grammarTip}</div>`;
+            container.innerHTML = html;
+            const c1 = document.getElementById('storyChoice1');
+            const c2 = document.getElementById('storyChoice2');
+            const c3 = document.getElementById('storyChoice3');
+            const attemptsEl = document.getElementById('storyAttempts');
+            const hintBox = document.getElementById('storyHintBox');
+            const fb = document.getElementById('storyFeedback');
+            c1.style.display = 'none';
+            c2.style.display = 'none';
+            c3.style.display = 'none';
+            c1.disabled = false;
+            c2.disabled = false;
+            c3.disabled = false;
+            c1.className = 'story-choice';
+            c2.className = 'story-choice';
+            c3.className = 'story-choice';
+            attemptsEl.style.display = 'none';
+            hintBox.classList.remove('show');
+            hintBox.textContent = '';
+            fb.style.display = 'none';
+            if (scene.final) {
+                fb.style.display = 'block';
+                fb.className = 'story-final-message';
+                fb.innerHTML = scene.message || '🏁 Tamat!';
+                addXP(10);
+                SoundFX.play('complete');
+                speakText('Tahniah! Cerita tamat!');
+                launchConfetti(3000);
+                return;
+            }
+            if (scene.choices && scene.choices.length > 0) {
+                const ch = scene.choices;
+                if (ch.length >= 1) { c1.style.display = 'inline-block';
+                    c1.textContent = ch[0].text;
+                    c1.dataset.index = 0;
+                    c1.disabled = false; }
+                if (ch.length >= 2) { c2.style.display = 'inline-block';
+                    c2.textContent = ch[1].text;
+                    c2.dataset.index = 1;
+                    c2.disabled = false; }
+                if (ch.length >= 3) { c3.style.display = 'inline-block';
+                    c3.textContent = ch[2].text;
+                    c3.dataset.index = 2;
+                    c3.disabled = false; }
+            }
+            if (scene.correct !== undefined && storyAttempts[sceneId] !== undefined) {
+                const att = storyAttempts[sceneId];
+                if (att > 0) { attemptsEl.style.display = 'block';
+                    attemptsEl.innerHTML =
+                    `📝 Percubaan: <span class="highlight" style="color:var(--orange);font-weight:900;">${att}</span> kali. Teruskan! 💪`; }
+                if (att >= 2 && scene.hint) { hintBox.classList.add('show');
+                    hintBox.textContent = scene.hint; }
+            }
+        }
+
+        function makeStoryChoice(index) {
+            SoundFX.play('click');
+            const scene = storyData.scenes[currentScene];
+            if (!scene || !scene.choices || !scene.choices[index]) { showToast('⚠️ Pilihan tidak sah.'); return; }
+            const choice = scene.choices[index];
+            const nextId = choice.next;
+            if (scene.correct !== undefined) {
+                const isCorrect = (index === scene.correct);
+                if (!storyAttempts[currentScene]) storyAttempts[currentScene] = 0;
+                storyAttempts[currentScene]++;
+                if (!isCorrect) {
+                    showToast('😅 Cuba pilihan lain!');
+                    SoundFX.play('wrong');
+                    const btnMap = { 0: document.getElementById('storyChoice1'), 1: document.getElementById(
+                            'storyChoice2'), 2: document.getElementById('storyChoice3') };
+                    const btn = btnMap[index];
+                    if (btn) { btn.classList.add('wrong-answer');
+                        setTimeout(() => btn.classList.remove('wrong-answer'), 600); }
+                    renderStory(currentScene);
+                    return;
+                } else {
+                    showToast('✅ Betul! +5 XP');
+                    SoundFX.play('correct');
+                    addXP(5);
+                    speakText('Betul!');
+                    delete storyAttempts[currentScene];
+                    if (nextId) renderStory(nextId);
+                    return;
+                }
+            }
+            if (nextId) renderStory(nextId);
+            else { showToast('🏁 Tamat cerita!');
+                SoundFX.play('complete'); }
+        }
+
+        function startStory() {
+            SoundFX.play('click');
+            storyAttempts = {};
+            renderStory('start');
+            showToast('📖 Cerita bermula!');
+            SoundFX.play('notification');
+        }
+
+        // =========================================================
+        // ====== MISI ======
+        // =========================================================
+        const MISI_LOCATIONS = [
+            { id: 1, name: 'Rumah', emoji: '🏠' }, { id: 2, name: 'Kebun', emoji: '🌾' }, { id: 3, name: 'Ladang',
+                emoji: '🐄' },
+            { id: 4, name: 'Kedai', emoji: '🏪' }, { id: 5, name: 'Jambatan', emoji: '🌉' }, { id: 6, name: 'Sekolah',
+                emoji: '🏫' },
+            { id: 7, name: 'Taman', emoji: '🌳' }, { id: 8, name: 'Dataran', emoji: '🏆' }
+        ];
+        const MISI_QUESTIONS = {
+            1: {
+                name: 'Rumah',
+                emoji: '🏠',
+                notes: 'Ayat Tunggal = satu subjek + satu predikat.',
+                questions: [
+                    { level: 'rendah', q: 'Apakah maksud Ayat Tunggal?', opts: [
+                            'Ayat dengan satu subjek dan satu predikat',
+                            'Ayat dengan banyak subjek', 'Ayat guna kata hubung', 'Ayat panjang'
+                        ], ans: 0, fb_correct: '🎉 Betul!', fb_wrong: '😅 Cuba lagi!' },
+                    { level: 'rendah', q: 'Berapakah klausa dalam Ayat Tunggal?', opts: ['Satu', 'Dua', 'Tiga',
+                            'Banyak'
+                        ], ans: 0, fb_correct: '🎉 Tepat!', fb_wrong: '😅 Cuba lagi!' },
+                    { level: 'rendah', q: 'Yang manakah Ayat Tunggal?', opts: ['Mr Bean makan nasi.',
+                            'Mr Bean makan nasi dan minum air.', 'Mr Bean makan nasi kerana lapar.',
+                            'Mr Bean makan nasi supaya kenyang.'
+                        ], ans: 0, fb_correct: '🎉 Betul!', fb_wrong: '😅 Cuba lagi!' }
+                ]
+            },
+            2: {
+                name: 'Kebun',
+                emoji: '🌾',
+                notes: 'Kenal pasti Ayat Tunggal atau Majmuk.',
+                questions: [
+                    { level: 'rendah', q: '"Mr Bean menyiram pokok." — Jenis ayat?', opts: ['Ayat Tunggal',
+                            'Ayat Majmuk'
+                        ], ans: 0, fb_correct: '🎉 Betul!', fb_wrong: '😅 Cuba lagi!' },
+                    { level: 'rendah', q: '"Ali menyapu sampah." — Jenis ayat?', opts: ['Ayat Tunggal',
+                            'Ayat Majmuk'
+                        ], ans: 0, fb_correct: '🎉 Hebat!', fb_wrong: '😅 Cuba lagi!' },
+                    { level: 'sederhana', q: '"Ibu memasak nasi dan ayah membaca surat." — Jenis ayat?', opts: [
+                            'Ayat Tunggal', 'Ayat Majmuk'
+                        ], ans: 1, fb_correct: '🎉 Betul!', fb_wrong: '😅 Cuba lagi!' }
+                ]
+            },
+            3: {
+                name: 'Ladang',
+                emoji: '🐄',
+                notes: 'Tentukan jenis ayat — Tunggal atau Majmuk.',
+                questions: [
+                    { level: 'sederhana', q: '"Ali bermain bola dan Amir membaca buku." — Jenis ayat?', opts: [
+                            'Ayat Tunggal', 'Ayat Majmuk'
+                        ], ans: 1, fb_correct: '🎉 Betul!', fb_wrong: '😅 Cuba lagi!' },
+                    { level: 'sederhana', q: '"Kambing itu makan rumput." — Jenis ayat?', opts: ['Ayat Tunggal',
+                            'Ayat Majmuk'
+                        ], ans: 0, fb_correct: '🎉 Tepat!', fb_wrong: '😅 Cuba lagi!' },
+                    { level: 'tinggi', q: '"Lembu minum air dan kerbau berehat." — Jenis ayat?', opts: ['Ayat Tunggal',
+                            'Ayat Majmuk'
+                        ], ans: 1, fb_correct: '🎉 Hebat!', fb_wrong: '😅 Cuba lagi!' }
+                ]
+            },
+            4: {
+                name: 'Kedai',
+                emoji: '🏪',
+                notes: 'Kata hubung menggabungkan ayat.',
+                questions: [
+                    { level: 'sederhana', q: 'Mr Bean membeli roti ___ susu.', opts: ['dan', 'tetapi', 'kerana',
+                            'supaya'
+                        ], ans: 0, fb_correct: '🎉 Betul!', fb_wrong: '😅 Cuba lagi!' },
+                    { level: 'sederhana', q: 'Saya suka aiskrim ___ adik suka coklat.', opts: ['dan', 'tetapi',
+                            'kerana', 'supaya'
+                        ], ans: 1, fb_correct: '🎉 Bagus!', fb_wrong: '😅 Cuba lagi!' },
+                    { level: 'tinggi', q: 'Kita belajar ___ lulus peperiksaan.', opts: ['dan', 'tetapi', 'kerana',
+                            'supaya'
+                        ], ans: 3, fb_correct: '🎉 Hebat!', fb_wrong: '😅 Cuba lagi!' }
+                ]
+            },
+            5: {
+                name: 'Jambatan',
+                emoji: '🌉',
+                notes: 'Gabungkan dua Ayat Tunggal menjadi Majmuk.',
+                questions: [
+                    { level: 'tinggi', q: 'Gabung: "Mr Bean makan nasi." + "Mr Bean minum susu."', opts: [
+                            'Mr Bean makan nasi dan minum susu.', 'Mr Bean makan nasi.', 'Mr Bean minum susu.'
+                        ], ans: 0, fb_correct: '🎉 Betul!', fb_wrong: '😅 Cuba lagi!' },
+                    { level: 'tinggi', q: 'Gabung: "Ahmad rajin belajar." + "Ahmad lulus." guna "supaya"', opts: [
+                            'Ahmad rajin belajar supaya dia lulus.', 'Ahmad rajin belajar.', 'Ahmad lulus.'
+                        ], ans: 0, fb_correct: '🎉 Betul!', fb_wrong: '😅 Cuba lagi!' }
+                ]
+            },
+            6: {
+                name: 'Sekolah',
+                emoji: '🏫',
+                notes: 'Cabaran campuran!',
+                questions: [
+                    { level: 'sederhana', q: 'Apakah maksud Ayat Majmuk?', opts: [
+                            'Dua atau lebih klausa digabungkan', 'Ayat pendek', 'Ayat tanpa subjek', 'Ayat tanya'
+                        ], ans: 0, fb_correct: '🎉 Betul!', fb_wrong: '😅 Cuba lagi!' },
+                    { level: 'sederhana', q: '"Mr Bean tidur." — Ayat Tunggal?', opts: ['Betul', 'Salah'], ans: 0,
+                        fb_correct: '🎉 Betul!', fb_wrong: '😅 Cuba lagi!' },
+                    { level: 'tinggi', q: '"Cikgu mengajar dan murid mendengar." — Jenis ayat?', opts: ['Ayat Tunggal',
+                            'Ayat Majmuk'
+                        ], ans: 1, fb_correct: '🎉 Hebat!', fb_wrong: '😅 Cuba lagi!' }
+                ]
+            },
+            7: {
+                name: 'Taman',
+                emoji: '🌳',
+                notes: 'Jawab pantas! Setiap betul +10 bintang.',
+                questions: [
+                    { level: 'rendah', q: '"Burung terbang tinggi." — Tunggal atau Majmuk?', opts: ['Ayat Tunggal',
+                            'Ayat Majmuk'
+                        ], ans: 0, fb_correct: '🎉 +10!', fb_wrong: '😅 0.' },
+                    { level: 'sederhana', q: '"Dia rajin tetapi kurang berehat." — Tunggal atau Majmuk?', opts: [
+                            'Ayat Tunggal', 'Ayat Majmuk'
+                        ], ans: 1, fb_correct: '🎉 +10!', fb_wrong: '😅 0.' },
+                    { level: 'tinggi', q: 'Gabung: "Saya mandi." + "Saya bersarapan." guna "dan"', opts: [
+                            'Saya mandi dan saya bersarapan.', 'Saya mandi.', 'Saya bersarapan.'
+                        ], ans: 0, fb_correct: '🎉 +10!', fb_wrong: '😅 0.' }
+                ]
+            },
+            8: {
+                name: 'Dataran',
+                emoji: '🏆',
+                notes: '🏆 Cabaran terakhir!',
+                questions: [
+                    { level: 'rendah', q: 'Apakah maksud Ayat Tunggal?', opts: [
+                            'Satu subjek dan satu predikat', 'Dua subjek', 'Ayat panjang', 'Guna kata hubung'
+                        ], ans: 0, fb_correct: '🎉 Betul!', fb_wrong: '😅 Cuba lagi!' },
+                    { level: 'sederhana', q: '"Nenek duduk di beranda." — Jenis ayat?', opts: ['Ayat Tunggal',
+                            'Ayat Majmuk'
+                        ], ans: 0, fb_correct: '🎉 Tepat!', fb_wrong: '😅 Cuba lagi!' },
+                    { level: 'tinggi', q: 'Gabung: "Ali suka bola." + "Amin suka melukis." guna "tetapi"', opts: [
+                            'Ali suka bola tetapi Amin suka melukis.', 'Ali suka bola.', 'Amin suka melukis.'
+                        ], ans: 0, fb_correct: '🎉 Cemerlang!', fb_wrong: '😅 Cuba lagi!' }
+                ]
+            }
+        };
+        const TOTAL_MISIS = Object.keys(MISI_QUESTIONS).length;
+        let misiState = {
+            completed: new Set(),
+            unlocked: 1,
+            stars: 0,
+            badges: [],
+            mission_q_index: {},
+            mission_correct: {},
+            mission_answered: {},
+            mission_score: {}
+        };
+
+        function loadMisiState() {
+            try { const saved = localStorage.getItem('misi_state'); if (saved) { const p = JSON.parse(saved);
+                    misiState.completed = new Set(p.completed || []);
+                    misiState.unlocked = p.unlocked || 1;
+                    misiState.stars = p.stars || 0;
+                    misiState.badges = p.badges || [];
+                    misiState.mission_q_index = p.mission_q_index || {};
+                    misiState.mission_correct = p.mission_correct || {};
+                    misiState.mission_answered = p.mission_answered || {};
+                    misiState.mission_score = p.mission_score || {}; } } catch (e) {}
+        }
+
+        function saveMisiState() {
+            try { localStorage.setItem('misi_state', JSON.stringify({ completed: Array.from(misiState.completed),
+                    unlocked: misiState.unlocked, stars: misiState.stars, badges: misiState.badges,
+                    mission_q_index: misiState.mission_q_index, mission_correct: misiState.mission_correct,
+                    mission_answered: misiState.mission_answered, mission_score: misiState.mission_score })); } catch (
+            e) {}
+        }
+
+        function renderMisi() {
+            loadMisiState();
+            const container = document.getElementById('misiContent');
+            const grid = document.getElementById('misiLocationGrid');
+            const progress = document.getElementById('misiProgressContainer');
+            const done = misiState.completed.size;
+            const total = TOTAL_MISIS;
+            const pct = Math.round((done / total) * 100);
+            progress.innerHTML = `
+                <div class="misi-progress">
+                    <div style="font-weight:900;font-size:1rem;">🗺️ ${done}/${total} Misi</div>
+                    <div style="flex:1;min-width:60px;"><div style="background:var(--line);border-radius:99px;height:10px;overflow:hidden;"><div style="background:var(--green);height:100%;width:${pct}%;border-radius:99px;transition:width .6s;"></div></div></div>
+                    <div class="misistats"><span>⭐ ${misiState.stars}</span><span>🎖️ ${misiState.badges.length}</span><span>🔓 Misi ${misiState.unlocked}</span></div>
+                </div>`;
+            grid.innerHTML = '';
+            MISI_LOCATIONS.forEach(loc => {
+                const mid = loc.id;
+                const isDone = misiState.completed.has(mid);
+                const isCurrent = mid === misiState.unlocked;
+                const isLocked = mid > misiState.unlocked;
+                let cls = 'misiloc-card';
+                if (isLocked) cls += ' locked';
+                if (isDone) cls += ' done';
+                if (isCurrent && !isDone) cls += ' current';
+                let statusText = isDone ? '✅ Selesai' : (isLocked ? '🔒 Berkunci' : '🎯 Sedia');
+                let statusCls = 'lstatus';
+                if (isDone) statusCls += ' done';
+                if (isCurrent && !isDone) statusCls += ' current';
+                const onclick = !isLocked ? `openMisi(${mid})` : `showToast('🔒 Selesaikan misi sebelumnya!')`;
+                grid.innerHTML +=
+                    `<div class="${cls}" onclick="${onclick}"><span class="emoji">${loc.emoji}</span><div class="lname">${loc.name}</div><div class="${statusCls}">${statusText}</div>${isCurrent && !isDone ? '<div style="font-size:.55rem;color:var(--orange);font-weight:800;">🚶 Mr Bean di sini</div>' : ''}</div>`;
+            });
+            if (misiState.completed.size === TOTAL_MISIS) {
+                container.innerHTML =
+                    `<div class="misi-finish-box"><div class="big-emoji">🏆</div><h2>🎉 Semua Misi Selesai!</h2><p>⭐ ${misiState.stars} bintang • 🎖️ ${misiState.badges.length} lencana</p><button onclick="resetMisi()" style="padding:10px 20px;border-radius:99px;background:var(--yellow);font-weight:900;touch-action:manipulation;">🔄 Main Semula</button></div>`;
+                launchConfetti(5000);
+                SoundFX.play('complete');
+                return;
+            }
+            const active = parseInt(localStorage.getItem('active_misi_id') || '0');
+            if (active > 0 && !misiState.completed.has(active) && active <= misiState.unlocked) renderMisiQuestion(active);
+            else container.innerHTML =
+                `<div class="panel" style="text-align:center;padding:20px;"><p style="font-weight:800;color:var(--muted);">🗺️ Klik lokasi di atas untuk memulakan misi!</p></div>`;
+        }
+
+        function openMisi(missionId) {
+            SoundFX.play('click');
+            if (missionId > misiState.unlocked) { showToast('🔒 Selesaikan misi sebelumnya!');
+                SoundFX.play('wrong'); return; }
+            if (misiState.completed.has(missionId)) { showToast('✅ Misi selesai! Cuba ulang?');
+                localStorage.setItem('active_misi_id', String(missionId));
+                renderMisiQuestion(missionId); return; }
+            localStorage.setItem('active_misi_id', String(missionId));
+            const mission = MISI_QUESTIONS[missionId];
+            if (!mission) return;
+            if (!misiState.mission_q_index[missionId]) {
+                misiState.mission_q_index[missionId] = 0;
+                misiState.mission_correct[missionId] = [];
+                misiState.mission_answered[missionId] = [];
+                misiState.mission_score[missionId] = 0;
+                mission.questions.forEach((_, idx) => { misiState.mission_correct[missionId][idx] = null;
+                    misiState.mission_answered[missionId][idx] = false; });
+                saveMisiState();
+            }
+            renderMisiQuestion(missionId);
+        }
+
+        function renderMisiQuestion(missionId) {
+            const mission = MISI_QUESTIONS[missionId];
+            if (!mission) return;
+            const container = document.getElementById('misiContent');
+            const questions = mission.questions;
+            const qIndex = misiState.mission_q_index[missionId] || 0;
+            if (qIndex >= questions.length) {
+                const correct = misiState.mission_correct[missionId] ? misiState.mission_correct[missionId].filter(Boolean)
+                    .length : 0;
+                container.innerHTML =
+                    `<div class="misi-finish-box"><div class="big-emoji">🎉</div><h2>Misi ${mission.emoji} ${mission.name} Selesai!</h2><p>Betul: ${correct}/${questions.length}</p><p>⭐ ${misiState.mission_score[missionId]||0} bintang</p><button onclick="completeMisi(${missionId})" style="padding:12px 24px;border-radius:99px;background:var(--green);color:white;font-weight:900;touch-action:manipulation;">✅ Selesai & Kembali</button></div>`;
+                SoundFX.play('complete');
+                return;
+            }
+            const q = questions[qIndex];
+            const already = misiState.mission_answered[missionId] && misiState.mission_answered[missionId][qIndex];
+            let html =
+                `<div class="panel misi-q-wrap"><div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-bottom:4px;"><span style="font-weight:800;color:var(--muted);">Soalan ${qIndex+1}/${questions.length}</span><span style="font-size:.7rem;font-weight:700;background:var(--sky);padding:2px 10px;border-radius:99px;">${q.level}</span><button class="hint-btn" onclick="toggleMisiHint(${missionId},${qIndex})">💡 Petunjuk</button></div><div class="q-text">${q.q}</div><div class="hint-box" id="misiHint_${missionId}_${qIndex}">🔍 ${q.fb_correct.replace('🎉 ','').replace('!','')}</div><div class="q-options">`;
+            const letters = ['A', 'B', 'C', 'D'];
+            q.opts.forEach((opt, i) => {
+                let cls = 'q-opt-btn';
+                if (already) { if (i === q.ans) cls += ' correct';
+                    else if (misiState.mission_correct[missionId] && misiState.mission_correct[missionId][
+                            qIndex] === false && i === misiState._tempSelected) cls += ' wrong'; }
+                const disabled = already ? 'disabled' : '';
+                const onclick = already ? '' : `onclick="answerMisi(${missionId},${qIndex},${i})"`;
+                html +=
+                    `<button class="${cls}" ${disabled} ${onclick}><span class="letter">${letters[i]}</span><span>${opt}</span></button>`;
+            });
+            html += `</div>`;
+            if (already) {
+                const isCorrect = misiState.mission_correct[missionId] && misiState.mission_correct[missionId][qIndex];
+                html +=
+                    `<div class="q-feedback show ${isCorrect?'good':'retry'}" style="display:block;margin-top:10px;">${isCorrect?q.fb_correct:q.fb_wrong+' (Jawapan: '+q.opts[q.ans]+')'}</div>`;
+                html +=
+                    `<button onclick="nextMisiQuestion(${missionId})" style="padding:8px 20px;border-radius:99px;background:var(--blue);color:white;font-weight:900;margin-top:10px;touch-action:manipulation;">➡️ Seterusnya</button>`;
+            } else {
+                html +=
+                    `<button onclick="checkMisiAnswer(${missionId},${qIndex})" style="padding:8px 20px;border-radius:99px;background:var(--green);color:white;font-weight:900;margin-top:10px;touch-action:manipulation;">✅ Semak</button>`;
+            }
+            html += `<div style="margin-top:10px;padding:10px;background:var(--sky);border-radius:10px;font-size:.8rem;color:var(--muted);">💡 ${mission.notes}</div></div>`;
+            container.innerHTML = html;
+            window._misiSelectedAnswer = null;
+        }
+
+        let _misiSelectedAnswer = null;
+
+        function answerMisi(missionId, qIndex, selected) {
+            window._misiSelectedAnswer = selected;
+            document.querySelectorAll('#misiContent .q-opt-btn').forEach((b, i) => {
+                if (i === selected) { b.style.borderColor = 'var(--blue)';
+                    b.style.background = '#e8f0fe'; } else { b.style.borderColor = '#e7dfcb';
+                    b.style.background = 'white'; }
+            });
+        }
+
+        function checkMisiAnswer(missionId, qIndex) {
+            SoundFX.play('click');
+            const selected = window._misiSelectedAnswer;
+            if (selected === null || selected === undefined) { showToast('⚠️ Pilih jawapan dahulu!');
+                SoundFX.play('wrong'); return; }
+            const mission = MISI_QUESTIONS[missionId];
+            if (!mission) return;
+            const q = mission.questions[qIndex];
+            const isCorrect = selected === q.ans;
+            misiState.mission_answered[missionId][qIndex] = true;
+            misiState.mission_correct[missionId][qIndex] = isCorrect;
+            misiState._tempSelected = selected;
+            if (isCorrect) { misiState.mission_score[missionId] = (misiState.mission_score[missionId] || 0) + 10;
+                misiState.stars += 10;
+                showToast('✅ Betul! +10 bintang!');
+                SoundFX.play('correct'); } else { showToast('😅 Cuba lagi!');
+                SoundFX.play('wrong'); }
+            saveMisiState();
+            renderMisiQuestion(missionId);
+        }
+
+        function toggleMisiHint(missionId, qIndex) {
+            SoundFX.play('click');
+            const el = document.getElementById(`misiHint_${missionId}_${qIndex}`);
+            if (el) el.classList.toggle('show');
+        }
+
+        function nextMisiQuestion(missionId) {
+            SoundFX.play('click');
+            misiState.mission_q_index[missionId] = (misiState.mission_q_index[missionId] || 0) + 1;
+            saveMisiState();
+            renderMisiQuestion(missionId);
+        }
+
+        function completeMisi(missionId) {
+            SoundFX.play('complete');
+            const mission = MISI_QUESTIONS[missionId];
+            if (!mission) return;
+            const correct = misiState.mission_correct[missionId] ? misiState.mission_correct[missionId].filter(Boolean)
+                .length : 0;
+            const badge = `Pakar ${mission.name}`;
+            if (!misiState.badges.includes(badge)) misiState.badges.push(badge);
+            misiState.completed.add(missionId);
+            if (missionId === misiState.unlocked && missionId < TOTAL_MISIS) misiState.unlocked = missionId + 1;
+            saveMisiState();
+            localStorage.removeItem('active_misi_id');
+            showToast(`🎉 Misi ${mission.emoji} ${mission.name} selesai!`);
+            launchConfetti(4000);
+            renderMisi();
+        }
+
+        function resetMisi() {
+            SoundFX.play('click');
+            if (confirm('⚠️ Mulakan semula semua misi? Kemajuan akan hilang.')) {
+                localStorage.removeItem('misi_state');
+                misiState = { completed: new Set(), unlocked: 1, stars: 0, badges: [], mission_q_index: {},
+                    mission_correct: {}, mission_answered: {}, mission_score: {} };
+                saveMisiState();
+                localStorage.removeItem('active_misi_id');
+                renderMisi();
+                showToast('🔄 Misi dimulakan semula!');
+                SoundFX.play('notification');
+            }
+        }
+
+        // =========================================================
+        // ====== CHAT & AI ======
+        // =========================================================
+        let geminiApiKey = localStorage.getItem('gemini_api_key') || '';
+
+        function updateKeyStatus() {
+            const el = document.getElementById('keyStatus');
+            if (geminiApiKey && geminiApiKey.length > 5) { el.textContent = '✅ AI Penuh';
+                el.className = 'key-status'; } else { el.textContent = '🔑 Percuma';
+                el.className = 'key-status missing'; }
+        }
+
+        function openKeyModal() { SoundFX.play('click');
+            document.getElementById('apiKeyInput').value = geminiApiKey;
+            document.getElementById('keyModal').classList.add('open'); }
+
+        function closeKeyModal() { SoundFX.play('click');
+            document.getElementById('keyModal').classList.remove('open'); }
+
+        function saveApiKey() {
+            SoundFX.play('click');
+            const val = document.getElementById('apiKeyInput').value.trim();
+            if (val && val.length > 5) { geminiApiKey = val;
+                localStorage.setItem('gemini_api_key', val);
+                showToast('✅ Kekunci disimpan!');
+                SoundFX.play('notification'); } else { showToast('⚠️ Masukkan kekunci yang sah.');
+                SoundFX.play('wrong'); return; }
+            updateKeyStatus();
+            closeKeyModal();
+        }
+
+        function clearApiKey() {
+            SoundFX.play('click');
+            geminiApiKey = '';
+            localStorage.removeItem('gemini_api_key');
+            document.getElementById('apiKeyInput').value = '';
+            updateKeyStatus();
+            showToast('🗑️ Kekunci dipadam.');
+            closeKeyModal();
+        }
+
+        let chatOpen = false;
+
+        function toggleChat() {
+            SoundFX.play('click');
+            chatOpen = !chatOpen;
+            document.getElementById('chat').classList.toggle('open', chatOpen);
+            if (chatOpen) { document.getElementById('chatInput').focus(); }
+        }
+
+        function addMessage(text, sender, isHtml = false) {
+            const m = document.getElementById('messages');
+            const d = document.createElement('div');
+            d.className = 'msg ' + sender;
+            d.innerHTML = isHtml ? text : text;
+            m.appendChild(d);
+            m.scrollTop = m.scrollHeight;
+        }
+
+        function showTyping() {
+            const m = document.getElementById('messages');
+            const d = document.createElement('div');
+            d.className = 'msg bot';
+            d.id = 'typing-indicator';
+            d.innerHTML = `<div class="typing"><span></span><span></span><span></span></div>`;
+            m.appendChild(d);
+            m.scrollTop = m.scrollHeight;
+        }
+
+        function hideTyping() { const el = document.getElementById('typing-indicator'); if (el) el.remove(); }
+
+        function fallbackReply(q) {
+            const l = q.toLowerCase();
+            if (l.includes('ayat tunggal') && !l.includes('majmuk')) return '<b>Ayat tunggal (单句)</b> = satu idea. Contoh: Siti membaca buku.';
+            if (l.includes('beza') || (l.includes('ayat') && l.includes('majmuk'))) return '<b>Ayat tunggal</b> = satu idea.<br><b>Ayat majmuk</b> = dua atau lebih idea digabungkan.<br>Contoh: Ali bermain bola dan Siti membaca buku.';
+            if (l.includes('contoh')) return '<b>Contoh:</b><br>• Ayat tunggal: Ibu memasak nasi.<br>• Ayat majmuk: Ali membaca buku dan Siti menulis nota.';
+            if (l.includes('cina') || l.includes('中文')) return '📚 Istilah: Ayat tunggal = 单句, Ayat majmuk = 复句, Subjek = 主语, Predikat = 谓语, Kata hubung = 连词';
+            if (l.includes('terima kasih') || l.includes('thank you')) return 'Sama-sama! 😊 Teruskan belajar!';
+            return '🤖 Saya boleh bantu tentang Ayat Tunggal & Majmuk. Masukkan kekunci Gemini untuk soalan lain!';
+        }
+
+        async function askAI(question) {
+            if (!question.trim()) return;
+            addMessage(question, 'user');
+            document.getElementById('chatInput').value = '';
+            if (geminiApiKey && geminiApiKey.length > 10) {
+                showTyping();
+                try {
+                    const resp = await fetch(
+                        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${geminiApiKey}`,
+                        { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({
+                                contents: [{ parts: [{ text: question }] }],
+                                generationConfig: { temperature: 0.7, maxOutputTokens: 600 }
+                            }) }
+                    );
+                    if (!resp.ok) throw new Error('API error');
+                    const data = await resp.json();
+                    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text || 'Maaf, saya tidak dapat memproses.';
+                    hideTyping();
+                    addMessage(text, 'bot', true);
+                    speakText(text.replace(/<[^>]*>/g, ''));
+                    SoundFX.play('notification');
+                } catch (err) {
+                    hideTyping();
+                    const fb = fallbackReply(question);
+                    addMessage(fb, 'bot', true);
+                    speakText(fb.replace(/<[^>]*>/g, ''));
+                    showToast('⚠️ AI menggunakan mod asas.');
+                    SoundFX.play('wrong');
+                }
+            } else {
+                const fb = fallbackReply(question);
+                addMessage(fb, 'bot', true);
+                speakText(fb.replace(/<[^>]*>/g, ''));
+                SoundFX.play('notification');
+            }
+        }
+
+        function sendAIMessage() {
+            SoundFX.play('click');
+            const input = document.getElementById('chatInput');
+            const q = input.value.trim();
+            if (!q) return;
+            input.value = '';
+            askAI(q);
+        }
+
+        let recognition = null,
+            isRecording = false;
+
+        function startVoiceInput() {
+            SoundFX.play('click');
+            const micBtn = document.getElementById('micBtn');
+            const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+            if (!SR) { showToast('❌ Suara tidak disokong.');
+                SoundFX.play('wrong'); return; }
+            if (!recognition) {
+                recognition = new SR();
+                recognition.lang = 'ms-MY';
+                recognition.interimResults = false;
+                recognition.continuous = false;
+                recognition.onstart = () => { isRecording = true;
+                    micBtn.classList.add('recording');
+                    micBtn.innerHTML = '<i data-lucide="square"></i>';
+                    lucide.createIcons();
+                    showToast('🎤 Mendengar...');
+                    SoundFX.play('notification'); };
+                recognition.onresult = (e) => {
+                    const t = e.results[0][0].transcript;
+                    document.getElementById('chatInput').value = t;
+                    showToast('✅ Suara diterima!');
+                    SoundFX.play('correct');
+                    setTimeout(() => sendAIMessage(), 300);
+                };
+                recognition.onerror = () => { showToast('❌ Ralat mikrofon.');
+                    SoundFX.play('wrong'); if (isRecording) { isRecording = false;
+                        micBtn.classList.remove('recording');
+                        micBtn.innerHTML = '<i data-lucide="mic"></i>';
+                        lucide.createIcons(); } };
+                recognition.onend = () => { isRecording = false;
+                    micBtn.classList.remove('recording');
+                    micBtn.innerHTML = '<i data-lucide="mic"></i>';
+                    lucide.createIcons(); };
+            }
+            if (isRecording) recognition.stop();
+            else try { recognition.start(); } catch (e) { showToast('❌ Mikrofon tidak dapat diakses.');
+                SoundFX.play('wrong'); }
+        }
+
+        // ===== QR =====
+        function initQR() {
+            const url = window.location.href;
+            document.getElementById('qrUrlDisplay').textContent = url;
+            document.getElementById('qrCodeImg').src =
+                `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(url)}&bgcolor=ffffff&color=1a1a2e&margin=12`;
+        }
+
+        function downloadQR() {
+            SoundFX.play('click');
+            const link = document.createElement('a');
+            link.download = 'qr-code.png';
+            link.href = document.getElementById('qrCodeImg').src;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            showToast('⬇️ QR Code dimuat turun!');
+        }
+
+        function copyURL() {
+            SoundFX.play('click');
+            const url = window.location.href;
+            if (navigator.clipboard && navigator.clipboard.writeText && window.location.protocol === 'https:') {
+                navigator.clipboard.writeText(url).then(() => { showToast('✅ URL disalin!');
+                    SoundFX.play('correct'); }).catch(() => fallbackCopy(url));
+            } else fallbackCopy(url);
+        }
+
+        function fallbackCopy(text) {
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            ta.style.left = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy');
+                showToast('✅ URL disalin!');
+                SoundFX.play('correct'); } catch (e) { showToast('❌ Gagal menyalin.');
+                SoundFX.play('wrong'); }
+            document.body.removeChild(ta);
+        }
+
+        // ===== TOAST =====
+        function showToast(msg) {
+            const t = document.getElementById('toast');
+            t.textContent = msg;
+            t.classList.add('show');
+            clearTimeout(t._timeout);
+            t._timeout = setTimeout(() => t.classList.remove('show'), 2500);
+        }
+
+        // ===== STREAK =====
+        function updateStreak() {
+            const today = new Date().toDateString();
+            let streak = parseInt(localStorage.getItem('streak_days')) || 0;
+            let last = localStorage.getItem('last_visit_date');
+            if (last !== today) {
+                const yest = new Date();
+                yest.setDate(yest.getDate() - 1);
+                if (last === yest.toDateString()) streak++;
+                else streak = 1;
+                localStorage.setItem('last_visit_date', today);
+                localStorage.setItem('streak_days', streak);
+                if (streak % 7 === 0 && streak > 0) { SoundFX.play('complete');
+                    showToast(`🎉 Streak ${streak} hari!`); }
+            }
+            document.getElementById('streak').textContent = `${streak} hari`;
+        }
+
+        // =========================================================
+        // ====== INIT ======
+        // =========================================================
+        document.addEventListener('DOMContentLoaded', function() {
+            lucide.createIcons();
+            pick('home', document.querySelector('.p1'));
+            updateKeyStatus();
+            initQR();
+            document.getElementById('xp').textContent = userXP + ' XP';
+            updateStreak();
+            if (document.getElementById('match').classList.contains('active')) renderMatch();
+            if (document.getElementById('story').classList.contains('active')) {
+                setTimeout(() => renderStory('start'), 100);
+            }
+            if (document.getElementById('misi').classList.contains('active')) renderMisi();
+
+            const obs = new MutationObserver(function(muts) {
+                muts.forEach(m => {
+                    if (m.type === 'attributes' && m.attributeName === 'class') {
+                        const t = m.target;
+                        if (t.id === 'match' && t.classList.contains('active')) renderMatch();
+                        if (t.id === 'story' && t.classList.contains('active')) setTimeout(() =>
+                            renderStory('start'), 100);
+                        if (t.id === 'misi' && t.classList.contains('active')) renderMisi();
+                    }
+                });
+            });
+            document.querySelectorAll('.page').forEach(p => obs.observe(p, { attributes: true }));
+        });
+
+        console.log('✅ Jom BM! – PWA‑ready, works on any phone via HTTPS.');
+    </script>
+</body>
+</html>
